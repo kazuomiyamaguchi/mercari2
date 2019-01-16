@@ -162,6 +162,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |category_path|string|null false|
+|item_id|references|foreign_key: true|
 
 ### Association
 
