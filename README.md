@@ -12,9 +12,9 @@
 |e-mail|string|null: false, unique:true|
 |password|string|null: false, unique:true|
 |phone_number|string|null: false, unique:true|
-|address|references|null: false, foreign_key: true|
-|payment|references|null: false,foreign_key: true|
-|creditcard|references|foreign_key: true|
+|address_id|references|null: false, foreign_key: true|
+|payment_id|references|null: false,foreign_key: true|
+|creditcard_id|references|foreign_key: true|
 |icon_image|text|
 |profile|text|
 |birth_year|integer|null: false|
@@ -40,7 +40,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |postcode|string|null: false|
-|prefecture|references|null: false|
+|prefecture_id|references|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building_name|string|
@@ -80,7 +80,7 @@
 |expiration_month|integer|null: false|
 |expiration_year|integer|null: false|
 |security_code|integer|null: false|
-|user|references|foreign_key: true|
+|user_id|references|foreign_key: true|
 
 ### Association
 
@@ -91,17 +91,17 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |item_name|string|null: false|
-|image|references|foreign_key: true|
+|image_id|references|foreign_key: true|
 |description|text|null: false|
-|category|references|null: false, foreign_key: true|
-|size|references|foreign_key: true|
-|brand|references|foreign_key: true|
-|condition|references|null: false, foreign_key: true|
-|delivery_fee|references|null: false, foreign_key: true|
-|ship_form|references|null: false, foreign_key: true|
-|delivery_day|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+|size_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
+|condition_id|references|null: false, foreign_key: true|
+|delivery_fee_id|references|null: false, foreign_key: true|
+|ship_form_id|references|null: false, foreign_key: true|
+|delivery_day_id|references|null: false, foreign_key: true|
 |price|integer|null: false|
 
 ### Association
@@ -123,8 +123,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|buyer|references|null false, foreign_key: true|
-|item|references|null false, foreign_key: true|
+|buyer_id|references|null false, foreign_key: true|
+|item_id|references|null false, foreign_key: true|
 |status|string|null false|
 
 ### Association
@@ -136,8 +136,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null false, foreign_key: true|
-|item|references|null false, foreign_key: true|
+|user_id|references|null false, foreign_key: true|
+|item_id|references|null false, foreign_key: true|
 
 ### Association
 
@@ -149,8 +149,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|
-|user|references|null false, foreign_key: true|
-|item|references|null false, foreign_key: true|
+|user_id|references|null false, foreign_key: true|
+|item_id|references|null false, foreign_key: true|
 
 ### Association
 
@@ -172,7 +172,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|text|
-|item|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 
@@ -193,7 +193,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|brand_name|string|
+|name|string|
 
 ### Association
 
