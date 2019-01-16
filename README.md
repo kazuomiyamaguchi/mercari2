@@ -1,24 +1,240 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, unique:true|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|e-mail|string|null: false, unique:true|
+|password|string|null: false, unique:true|
+|phone_number|string|null: false, unique:true|
+|address|references|null: false, foreign_key: true|
+|payment|references|null: false,foreign_key: true|
+|creditcard|references|foreign_key: true|
+|icon_image|text|
+|profile|text|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
+|verygood|integer|
+|good|integer|
+|bad|integer|
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_many :commodity_tradings
+- has_many :buyers, class_name: "user", through: commodity_tradings
+- has_many :likes
+- has_many :comments
+- has_one :address
+- has_one :payment
+- has_one :creditcard
 
-* Configuration
+## addressesテーブル
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+|postcode|string|null: false|
+|prefecture|references|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building_name|string|
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_one :prefecture
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions test
+## prefecturesテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|prefecture|string|null: false|
+
+### Association
+
+- belongs_to :address
+
+## paymentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|method|string|
+
+### Association
+
+- belongs_to :user
+
+
+## creditcardsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false|
+|expiration_month|integer|null: false|
+|expiration_year|integer|null: false|
+|security_code|integer|null: false|
+|user|references|foreign_key: true|
+
+### Association
+
+- belongs_to :user
+
+
+## itemsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|item_name|string|null: false|
+|image|references|foreign_key: true|
+|description|text|null: false|
+|category|references|null: false, foreign_key: true|
+|size|references|foreign_key: true|
+|brand|references|foreign_key: true|
+|condition|references|null: false, foreign_key: true|
+|delivery_fee|references|null: false, foreign_key: true|
+|ship_form|references|null: false, foreign_key: true|
+|delivery_day|references|null: false, foreign_key: true|
+|price|integer|null: false|
+
+### Association
+
+- belongs_to :user
+- has_many :images
+- belongs_to :category
+- has_one :size
+- has_one :brand
+- has_one :condition
+- has_one :delivery_fee
+- has_one :ship_form
+- has_one :delivery_day
+- has_many :commodity_tradings
+- has_many :likes
+- has_many :comments
+
+## Commodity_tradingsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|buyer|references|null false, foreign_key: true|
+|item|references|null false, foreign_key: true|
+|status|string|null false|
+
+### Association
+
+- belongs_to :buyer, class_name:"user"
+- belongs_to :item
+
+## Likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null false, foreign_key: true|
+|item|references|null false, foreign_key: true|
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+
+## Commentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|comment|text|
+|user|references|null false, foreign_key: true|
+|item|references|null false, foreign_key: true|
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+
+## categorysテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|category_path|string|null false|
+
+### Association
+
+- has_many :items
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|text|
+|item|references|null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :item
+
+
+## sizesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|size|string|
+
+### Association
+
+- belongs_to :item
+
+## brandsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|brand_name|string|
+
+### Association
+
+- belongs_to :item
+
+## conditionsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|condition|string|
+
+### Association
+
+- belongs_to :item
+
+## delivery_feesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|fee|string|
+
+### Association
+
+- belongs_to :item
+
+## ship_formsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|area|string|
+
+### Association
+
+- belongs_to :item
+
+## delivery_daysテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|day|string|
+
+### Association
+
+- belongs_to :item
