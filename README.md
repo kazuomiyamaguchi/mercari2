@@ -20,9 +20,7 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|verygood|integer|
-|good|integer|
-|bad|integer|
+|evaluation_id|references|null: false, foreign_key: true|
 
 ### Association
 
@@ -34,6 +32,7 @@
 - has_one :address
 - has_one :payment
 - has_one :creditcard
+- has_one :evaluation
 
 ## addressesテーブル
 
@@ -55,7 +54,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|prefecture|string|null: false|
+|name|string|null: false|
 
 ### Association
 
@@ -87,13 +86,27 @@
 - belongs_to :user
 
 
+
+## evaluationsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|verygood|integer|
+|good|integer|
+|bad|integer|
+
+### Association
+
+- belongs_to :user
+
+
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_name|string|null: false|
-|image_id|references|foreign_key: true|
+|name|string|null: false|
 |description|text|null: false|
 |category_id|references|null: false, foreign_key: true|
 |size_id|references|foreign_key: true|
