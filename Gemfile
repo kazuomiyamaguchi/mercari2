@@ -68,12 +68,4 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'fog-aws'
-
-
-
-
-
-
-
-
-
+gem 'devise'
