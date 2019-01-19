@@ -1,0 +1,86 @@
+.footer
+  .footer__banner
+    = image_tag("footer_banner.png",alt: "footer-banner",class: "footer__banner-img")
+  .footer-main
+    .footer-main-global
+      .footer-main-cell
+        .footer-main-cell__head
+          メルカリについて
+        %ul
+          %li
+            = link_to '利用規約',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to '有償ポイントに関する特約',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to 'プライバシーポリシー',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to 'コンプライアンスポリシー',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '個人データの安全管理にかかるか基本方針',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '特商法の表記/',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to '資金決済法に基づく表示',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '法令順守と犯罪抑止のために',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '会社概要/',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to '採用情報',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+
+
+      .footer-main-cell
+        .footer-main-cell__head
+          メルカリを見る
+        %ul
+          %li
+            = link_to 'カテゴリー一覧/',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to 'ブランド一覧/',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to '出品地域一覧',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '公式ブログ/',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to '公式twitter',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to '公式Facebook',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+
+      .footer-main-cell
+        .footer-main-cell__head
+          ヘルプ＆ガイド
+        %ul
+          %li
+            = link_to 'メルカリガイド',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to 'お知らせ/',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to 'メルカリボックス',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to 'らくらくメルカリ便/',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+            = link_to 'ゆうゆうメルカリ便',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '大型らくらくメルカリ便',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '車体取引ガイド',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '返品・返金ポリシー',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to 'メルカリあんしん・あんぜん宣言!',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+          %li
+            = link_to '偽ブランド品撲滅への取り組み',"/items" ,class: "footer-main-cell__head-link" ,method: :get
+
+      .footer-main-cell
+        .footer-main-cell__head
+          国
+        %ul
+          %li
+            = link_to "/items" ,class: "footer-main-cell__head--overseas-link" do
+              = image_tag("flag_us.png", alt: "united states", class: "country-img")
+              United States/
+          %li
+            = link_to "/items" ,class: "footer-main-cell__head--overseas-link" do
+              = image_tag("flag_uk.png", alt: "united kingdom", class: "country-img")
+              United Kingdom/
+          %li
+            = link_to "/items" ,class: "footer-main-cell__head--japan-link" do
+              = image_tag("flag_jp.png", alt: "japan", class: "japan-img")
+              日本
+
+  .footer__logo
+    = link_to "/items" ,class: "footer__logo-link" do
+      = image_tag("logo-white.svg",alt: "logo", class: "footer__logo-link-img")
+    .footer__copy-right
+      © 2019 Mercari

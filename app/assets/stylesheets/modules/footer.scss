@@ -1,0 +1,82 @@
+.footer{
+  background-color: #212121;
+  height: 750px;
+  width: 100vw;
+  font-size: 14px;
+  &__banner{
+    margin: 0 auto;
+    width: 100vw;
+    &-img{
+      background-size: contain;
+      max-width: 100%;
+      margin: 0 auto;
+
+    }
+  }
+  &-main{
+    width: 1052px;
+    height: 300px;
+    clear: both;
+    margin: auto;
+    padding-top: 35px;
+    &-global{
+      .footer-main-cell{
+        float: left;
+        text-align: center;
+        color: #FFFFFF;
+        margin-right: 20px;
+
+        &__head{
+          font-weight:bold;
+          color: #FFFFFF;
+          line-height: 50px;
+        }
+        .footer-main-cell__head-link{
+          text-decoration: none;
+          color: #FFFFFF;
+          line-height: 30px;
+        }
+        .footer-main-cell__head--overseas-link{
+          text-decoration: none;
+          color: #FFFFFF;
+          line-height: 30px;
+          .country-img{
+            width: 22px;
+            height: 22px;
+            margin-right: 8px;
+            vertical-align: middle;
+          }
+        }
+        .footer-main-cell__head--japan-link{
+          text-decoration: none;
+          color: #FFFFFF;
+          line-height: 30px;
+          .japan-img{
+            width: 22px;
+            height: 22px;
+            margin-right: 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  &__logo{
+    padding-top: 40px;
+    bottom: 0;
+
+    &-link{
+      position: relative;
+      left:45.5%;
+      transform: translateY(-50%) translateX(-50%);
+
+      &-img{
+
+      }
+    }
+    .footer__copy-right{
+      text-align: center;
+      color: #FFFFFF;
+    }
+  }
+}
