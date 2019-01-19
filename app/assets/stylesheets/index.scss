@@ -28,7 +28,7 @@
     .pickup-content{
       width: 940px;
       margin: auto 0;
-      .pickup-content__title{
+      &__title{
         margin: 26px 11px;
         text-align: center;
         .pickup-content__title-link{
@@ -39,10 +39,10 @@
 
         }
       }
-      .pickup-content-items{
+      &-items{
         width: 940px;
         height: 330px;
-        .pickup-content-items-box{
+        &-box{
           width: 213px;
           height: 330px;
           float: left;
@@ -61,7 +61,7 @@
             .pickup-content-items-box-body{
               padding: 16px;
               height: 110px;
-              .pickup-content-items-box-body__name{
+              &__name{
                 overflow: hidden;
                 height: 3em;
                 line-height: 1.5;
@@ -69,23 +69,23 @@
                 white-space: normal;
 
               }
-              .pickup-content-items-box-body__price{
+              &__price{
                 float: left;
                 font-size: 20px;
                 font-weight: 600;
               }
-              .pickup-content-items-box-body__favorite{
+              &__favorite{
                 float: right;
                 margin-top: 6px;
                 .favorite--gray{
                   margin-right: 10px;
                   color: gray;
                 }
-                .pickup-content-items-box-body__favorite-num{
+                &-num{
                   float: right;
                 }
               }
-              .pickup-content-items-box__tax{
+              &__tax{
                 clear:both;
                 font-size: 10px;
               }
