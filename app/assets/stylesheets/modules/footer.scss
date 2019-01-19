@@ -40,7 +40,7 @@
           text-decoration: none;
           color: #FFFFFF;
           line-height: 30px;
-          .country_img{
+          .country-img{
             width: 22px;
             height: 22px;
             margin-right: 8px;
@@ -51,7 +51,7 @@
           text-decoration: none;
           color: #FFFFFF;
           line-height: 30px;
-          .japan_img{
+          .japan-img{
             width: 22px;
             height: 22px;
             margin-right: 8px;
@@ -65,12 +65,12 @@
     padding-top: 40px;
     bottom: 0;
 
-    .footer_logo-link{
+    &-link{
       position: relative;
       left:45.5%;
       transform: translateY(-50%) translateX(-50%);
 
-      .footer_logo_img{
+      &-img{
 
       }
     }
