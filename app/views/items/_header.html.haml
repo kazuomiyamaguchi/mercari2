@@ -1,0 +1,28 @@
+.header
+  .header-top
+    = image_tag("logo.svg",alt: "logo",class: "header-top__title")
+    %input{class: "header-top__search",placeholder: 'キーワードから探す' }
+      = fa_icon 'search', class: 'header-top__search-icon'
+
+  .header-bottom
+    .header-bottom--left
+      %a{href: "", class: "header-bottom--left__nav-category"}
+        カテゴリーから探す
+      %a{href: "", class: "header-bottom--left__nav-brand"}
+        ブランドから探す
+    .header-bottom--right
+      %ul.bottom--right__nav
+        %li.header-bottom--right__nav-mypage
+          %a{href: "", class: "header-bottom--right__nav-mypage-link"}
+            .member-photo-dummy
+              = image_tag("member_photo_noimage_thumb.png",alt: "プロフィール",class: "member-photo")
+              .text-mypage
+                マイページ
+        %li.header-bottom--right__nav-news
+          %a{href: "", class: "header-bottom--right__nav-news-link"}
+            = fa_icon 'bell-o', class: "bell"
+            %span お知らせ
+        %li.header-bottom--right__nav-todo
+          %a{href: "", class: "header-bottom--right__nav-todo-link"}
+            = fa_icon 'check',class: "check"
+            %span やることリスト
