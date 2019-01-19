@@ -1,0 +1,105 @@
+.header{
+  &-top{
+    height: 36px;
+    width: 1020px;
+    margin:0 auto;
+    padding-top: 6px;
+    &__title{
+      height: 36px;
+      width: 134px;
+      float: left;
+    }
+    &__search{
+      height: 18px;
+      width: 830px;
+      margin-left: 10px;
+      padding: 9px 32px 9px 8px;
+      float: right;
+      border: 0.5px #CCCCCC solid;
+      border-radius: 3px;
+      color: #000;
+      background-color: #F5F5F5;
+      position: relative;
+      &-icon{
+        position: absolute;
+        right: 210px;
+        top: 15px;
+      }
+    }
+  }
+  &-bottom{
+    margin:0 auto;
+    height: 38px;
+    width: 1020px;
+    padding-top: 8px;
+    &--left{
+      float: left;
+      height: 32px;
+      &__nav-category{
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        line-height: 32px;
+        height: 38px;
+      }
+      &__nav-brand{
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        padding: 0 0 0 16px;
+        line-height: 32px;
+        height: 38px;
+      }
+    }
+    &--right{
+      height: 32px;
+      float: right;
+      &__nav{
+        &-mypage{
+          display: inline-block;
+          padding: 0 0 0 16px;
+          &-link{
+            text-decoration: none;
+            color: #000;
+            .member-photo-dummy{
+              .member-photo{
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                vertical-align: middle;
+              }
+            }
+            .text-mypage{
+              display: inline-block;
+              font-size: 14px;
+            }
+          }
+        }
+        &-news{
+          font-size: 14px;
+          display: inline-block;
+          padding: 0 0 0 16px;
+          line-height: 32px;
+          position: relative;
+          &-link{
+            text-decoration: none;
+            color: #000;
+            .bell{}
+          }
+        }
+        &-todo{
+          font-size: 14px;
+          display: inline-block;
+          padding: 0 0 0 16px;
+          line-height: 32px;
+          position: relative;
+          &-link{
+            text-decoration: none;
+            color: #000;
+            .check{}
+          }
+        }
+      }
+    }
+  }
+}
