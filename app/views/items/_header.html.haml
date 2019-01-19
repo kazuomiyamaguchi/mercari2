@@ -7,22 +7,23 @@
   .header-bottom
     .header-bottom--left
       %a{href: "", class: "header-bottom--left__nav-category"}
+      = link_to "/items" ,class: "header-bottom--left__nav-category" do
         カテゴリーから探す
-      %a{href: "", class: "header-bottom--left__nav-brand"}
+      = link_to "/items" ,class: "header-bottom--left__nav-brand" do
         ブランドから探す
     .header-bottom--right
       %ul.bottom--right__nav
         %li.header-bottom--right__nav-mypage
-          %a{href: "", class: "header-bottom--right__nav-mypage-link"}
+          = link_to "/items" ,class: "header-bottom--right__nav-mypage-link" do
             .member-photo-dummy
               = image_tag("member_photo_noimage_thumb.png",alt: "プロフィール",class: "member-photo")
               .text-mypage
                 マイページ
         %li.header-bottom--right__nav-news
-          %a{href: "", class: "header-bottom--right__nav-news-link"}
+          = link_to "/items" ,class: "header-bottom--right__nav-news-link" do
             = fa_icon 'bell-o', class: "bell"
             %span お知らせ
         %li.header-bottom--right__nav-todo
-          %a{href: "", class: "header-bottom--right__nav-todo-link"}
+          = link_to "/items" ,class: "header-bottom--right__nav-todo-link" do
             = fa_icon 'check',class: "check"
             %span やることリスト
