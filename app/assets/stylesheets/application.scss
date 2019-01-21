@@ -1,6 +1,9 @@
 @import "_reset";
 @import "font-awesome";
 @import "config/colors";
+@import "modules/bread-crumps";
 @import "modules/footer";
 @import "modules/header";
-@import "./index";
+@import "modules/side_bar";
+@import "items/index";
+@import "users/show";

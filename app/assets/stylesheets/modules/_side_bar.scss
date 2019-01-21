@@ -1,0 +1,33 @@
+.my-page-nav-global{
+  &__list{
+    background-color: #FFFFFF;
+    padding: 8px;
+    height: 32px;
+    border-bottom: 1px solid #eee;
+    .my-page-nav-global__list-link{
+      text-decoration: none;
+      color:#333;
+      .bellchevron-right{
+        float: right;
+        font-size: 14px;
+        margin-top: 9px;
+        color: #CCC;
+      }
+    }
+  }
+  &__list-noline{
+    background-color: #FFFFFF;
+    padding: 8px;
+    height: 32px;
+    .my-page-nav-global__list-link{
+      text-decoration: none;
+      color:#333;
+      .bellchevron-right{
+        float: right;
+        font-size: 14px;
+        margin-top: 9px;
+        color: #CCC;
+      }
+    }
+  }
+}
