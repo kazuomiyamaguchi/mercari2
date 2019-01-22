@@ -1,0 +1,93 @@
+= render "items/header"
+= render "share/bread-crumps"
+
+.my-page-edit__body
+  .my-page-edit__body-content
+    = render "share/side_bar"
+
+    .mypage-confirmation
+      .mypage-confirmation__title
+        本人情報の確認
+      .mypage-confirmation__explanation
+        お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+
+      -# ここにform_for
+      .mypage-confirmation-main
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              お名前
+            .confirmation__text-content-necessary-mark
+              必須
+          %input{class: "confirmation__input",placeholder: "例) 山田"}
+          %input{class: "confirmation__input",placeholder: "例) 彩"}
+
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              お名前カナ
+            .confirmation__text-content-necessary-mark
+              必須
+          %input{class: "confirmation__input",placeholder: "例) ヤマダ"}
+          %input{class: "confirmation__input",placeholder: "例) アヤ"}
+
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              郵便番号
+            .confirmation__text-content-option-mark
+              任意
+          %input{class: "confirmation__input",placeholder: "例) 12345678"}
+
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              都道府県
+            .confirmation__text-content-necessary-mark
+              必須
+          = render "share/select-prefecture"
+
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              市区町村
+            .confirmation__text-content-necessary-mark
+              必須
+          %input{class: "confirmation__input",placeholder: "例) 横浜市"}
+
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              番地
+            .confirmation__text-content-necessary-mark
+              必須
+          %input{class: "confirmation__input",placeholder: "例) 青山1-1-1"}
+
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              建物名
+            .confirmation__text-content-option-mark
+              任意
+          %input{class: "confirmation__input",placeholder: "例) 柳ビル103"}
+
+        .mypage-confirmation-main-form
+          .confirmation__text-content
+            .confirmation__text-content-title
+              生年月日
+            .confirmation__text-content-necessary-mark
+              必須
+          .confirmation__select-birthday
+            = render "share/select-birthday"
+            .confirmation__select-birthday__caution
+              ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+
+        .mypage-confirmation__send
+          %input{class: "mypage-confirmation__send-btn",type: "submit" , value: "登録する" }
+
+        .mypage-confirmation-about
+          = link_to "#",class: "mypage-confirmation-about__link" do
+            本人情報の登録について
+            = fa_icon 'chevron-right', class: "chevron-right"
+
+= render "items/footer"
