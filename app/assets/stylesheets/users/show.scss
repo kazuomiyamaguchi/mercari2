@@ -1,0 +1,78 @@
+.my-page__body{
+  clear: both;
+  height: 1272px;
+  background-color:#f5f5f5;
+  padding-top: 40px;
+  &-content{
+    width: 1020px;
+    margin: auto;
+    .my-page-nav{
+      float: left;
+      width: 280px;
+      padding-right: 40px;
+      &__head{
+        font-weight: bold;
+        margin-top: 40px;
+      }
+    }
+    .prof-content{
+      float: left;
+      width: 700px;
+      background-color: #FFFFFF;
+      &__title{
+        font-size: 24px;
+        padding: 8px 24px;
+        width: 652px;
+        text-align: center;
+        font-weight: bold;
+      }
+      &-main{
+        .setting-prof{
+          clear: both;
+          width: 700px;
+          height: 156px;
+          background: url(backprof.png);
+          background-size: 100%;
+          &__img-tag{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            float: left;
+            margin-top: 70px;
+            margin-left: 206px;
+          }
+          .setting-introduction__nickname{
+            width: 186px;
+            height: 28px;
+            padding: 10px 16px 8px 16px;
+            margin-top: 76px;
+            margin-left: 5px;
+            -moz-border-radius: 3px;
+          }
+        }
+        .setting-introduction{
+          &__sentence{
+            width: 644px;
+            height: 194px;
+            padding: 10px;
+            margin: 40px 0px 0px 16px;
+            font-size: 16px;
+            word-wrap: break-word;
+          }
+        }
+        .setting-prof__send{
+          margin: 16px 16px 40px;
+          &-btn{
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 668px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
