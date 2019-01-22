@@ -1,10 +1,10 @@
-= render 'items/header'
+= render "items/header"
 
-=render 'share/bread-crumps'
+= render "share/bread-crumps"
 
 .my-page__body
   .my-page__body-content
-    = render 'share/side_bar'
+    = render "share/side_bar"
     .prof-content
       .prof-content__title
         プロフィール
@@ -20,4 +20,4 @@
         .setting-prof__send
           %input{class: "setting-prof__send-btn",type: "submit" , value: "変更する" }
 
-= render 'items/footer'
+= render "items/footer"
