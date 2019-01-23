@@ -1,0 +1,22 @@
+.single-container
+
+  = render 'devise/registrations/header'
+
+  .single-main
+    .single-main__container
+      %h2.single-main__container__head 新規会員登録
+      .single-main__container__inner
+        .single-main__container__inner__body
+          -# リンク先は仮置き。
+          -# 本来は会員情報入力画面に遷移するパスを指定する。
+          = link_to "#", class: "btn-default btn-mail" do
+            = fa_icon 'envelope', class: "icon-mail"
+            メールアドレスで登録
+          = link_to "#", class: "btn-default btn-sns btn-sns__facebook" do
+            =fa_icon 'facebook-square', class: "icon-facebook"
+            facebookで登録
+          = link_to "#", class: "btn-default btn-sns btn-sns__google" do
+            =fa_icon 'google-plus', class: "icon-google"
+            googleで登録
+
+  = render 'devise/registrations/footer'
