@@ -1,0 +1,23 @@
+= render "items/header"
+
+= render "share/bread-crumps"
+
+.my-page__body
+  .my-page__body-content
+    = render "share/side_bar"
+    .prof-content
+      .prof-content__title
+        プロフィール
+      .prof-content-main
+        -# ここにform_for
+        .setting-prof
+          -# .setting-prof__img
+          = image_tag("member_photo_noimage_thumb.png", class: "setting-prof__img-tag" )
+          -# .setting-prof__nickname
+          %input{class: "setting-introduction__nickname"}
+        .setting-introduction
+          %textarea{type: "text" ,class: "setting-introduction__sentence", placeholder: "例) こんにちは☆ ご覧いただきありがとうございます!かわいいものやきれいめオフィスカジュアルを中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などのご質問がありましたらお気軽にどうぞ♪"}
+        .setting-prof__send
+          %input{class: "setting-prof__send-btn",type: "submit" , value: "変更する" }
+
+= render "items/footer"

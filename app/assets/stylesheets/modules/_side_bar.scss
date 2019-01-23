@@ -1,0 +1,42 @@
+.my-page-nav{
+  float: left;
+  width: 280px;
+  padding-right: 40px;
+  &__head{
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  &-global{
+    &__list{
+      font-size: 14px;
+      background-color: #FFFFFF;
+      padding: 16px;
+      height: 16px;
+      border-bottom: 1px solid #eee;
+      .my-page-nav-global__list-link{
+        text-decoration: none;
+        color:#333;
+        .bellchevron-right{
+          float: right;
+          font-size: 14px;
+          color: #CCC;
+        }
+      }
+    }
+    &__list-noline{
+      font-size: 14px;
+      background-color: #FFFFFF;
+      padding: 16px;
+      height: 16px;
+      .my-page-nav-global__list-link{
+        text-decoration: none;
+        color:#333;
+        .bellchevron-right{
+          float: right;
+          font-size: 14px;
+          color: #CCC;
+        }
+      }
+    }
+  }
+}
