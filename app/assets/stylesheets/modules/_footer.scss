@@ -22,21 +22,21 @@
       .footer-main-cell{
         float: left;
         text-align: center;
-        color: #FFFFFF;
+        color: $white;
         margin-right: 20px;
         &__head{
           font-weight:bold;
-          color: #FFFFFF;
+          color: $white;
           line-height: 50px;
         }
         .footer-main-cell__head-link{
           text-decoration: none;
-          color: #FFFFFF;
+          color: $white;
           line-height: 30px;
         }
         .footer-main-cell__head--overseas-link{
           text-decoration: none;
-          color: #FFFFFF;
+          color: $white;
           line-height: 30px;
           .country-img{
             width: 22px;
@@ -47,7 +47,7 @@
         }
         .footer-main-cell__head--japan-link{
           text-decoration: none;
-          color: #FFFFFF;
+          color: $white;
           line-height: 30px;
           .japan-img{
             width: 22px;
@@ -72,7 +72,7 @@
     }
     .footer__copy-right{
       text-align: center;
-      color: #FFFFFF;
+      color: $white;
     }
   }
 }
