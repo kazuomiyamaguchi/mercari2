@@ -3,4 +3,6 @@ class UsersController < ApplicationController
   end
   def edit
   end
+  def logout
+  end
 end
