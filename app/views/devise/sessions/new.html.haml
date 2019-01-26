@@ -1,0 +1,37 @@
+.single-container
+
+  = render 'devise/registrations/header'
+
+  .single-main
+    .single-main__login-container
+      .single-main__login-container__no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to new_user_registration_path, class: "btn-default btn-registration" do
+          新規会員登録
+
+      .single-main__login-container__sns
+        = link_to items_path, class: "btn-default btn-sns btn-sns__facebook" do
+          =fa_icon 'facebook-square', class: "icon-facebook"
+          facebookでログイン
+        = link_to items_path, class: "btn-default btn-sns btn-sns__google" do
+          =fa_icon 'google-plus', class: "icon-google"
+          googleでログイン
+
+      .single-main__login-container__mail
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .single-main__login-container__mail__field
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+          .single-main__login-container__mail__field
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+
+          .single-main__login-container__mail__field
+            -# 仮置き
+            = image_tag("reCAPTCHA.png", width: "300", height: "74")
+
+          .single-main__login-container__mail__actions
+            = f.submit "ログイン", class: "btn-default btn-red"
+
+        .single-main__login-container__mail__forget-pw パスワードをお忘れの方
+
+  = render 'devise/registrations/footer'
+
