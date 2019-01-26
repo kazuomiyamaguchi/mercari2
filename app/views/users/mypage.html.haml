@@ -1,0 +1,72 @@
+= render "items/header"
+
+= render "share/bread-crumps"
+
+.user-page__body
+  .user-page__body-content
+    = render "share/side_bar"
+
+    .user-page-main
+      .user-page-main-body
+        %section.user-information
+          = link_to "#",class: "user-information__link" do
+            .user__icon
+              = image_tag("member_photo_noimage_thumb.png", class: "user__icon-tag")
+            .user__nickname
+              nanashi
+            .user-content
+              .user__reputation
+                評価
+              .user__reputation-num
+                0
+              .user__reputation
+                出品数
+              .user__reputation-num
+                0
+      .user-notice
+        .user-notice__main
+          %ul.user-notice__tab
+            %li.news.select__notice
+              お知らせ
+            %li.todo
+              やることリスト
+
+        .user-notice__body
+          %ul.users-news
+            -# ここにif文(お知らせの有無による条件分岐)
+            %li.news__list
+              = image_tag("nonews_img.png", class: "news__image" )
+              .news__text
+                現在、お知らせはありません
+
+          %ul.users-todo
+            -# ここにif文(やることの有無による条件分岐)
+            %li.todo__list
+              = image_tag("nonews_img.png", class: "todo__image" )
+              .todo__text
+                現在、やることリストはありません
+
+    .user-page-items
+      .user-page-items__title
+        購入した商品
+      .user-page-items-main
+        %ul.user-page-items-main__tab
+          %li.transaction.select__time
+            取引中
+          %li.past-transaction
+            過去の取引
+        .user-page-items-main-content
+          %ul.user-page-items-main-transaction
+            -# ここにif文(商品の有無による条件分岐)
+            %li.transaction__list
+              = image_tag("nonews_img.png", class: "transaction__image" )
+              .transaction__text
+                取引中の商品がありません
+          %ul.user-page-items-main-past-transaction
+            -# ここにif文(商品の有無による条件分岐)
+            %li.past-transaction__list
+              = image_tag("nonews_img.png", class: "transaction__image" )
+              .past-transaction__text
+                過去に取引した商品がありません
+
+= render "items/footer"

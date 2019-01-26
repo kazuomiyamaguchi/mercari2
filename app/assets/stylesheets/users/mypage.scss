@@ -1,0 +1,210 @@
+.user-page__body{
+  width: 100vw;
+  height: 1288px;
+  background-color:#f5f5f5;
+  clear: both;
+  padding-top: 40px;
+  &-content{
+    margin: auto;
+    width: 1020px;
+    .user-page-main{
+      float: left;
+      &-body{
+        background-image: image-url("user-information.png");
+        width: 660px;
+        height: 160px;
+        padding: 20px;
+        background-size: 100%;
+        clear: both;
+        .user-information{
+          height: 150px;
+          margin-top: 25px;
+          &__link{
+            text-decoration: none;
+            color: #000000;
+            font-size: 14px;
+            width: 700px;
+            .user__icon{
+              height: 60px;
+              width: 60px;
+              margin: auto ;
+              &-tag{
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+              }
+            }
+            .user__nickname{
+              text-align: center;
+              margin: 8px 0 0;
+            }
+            .user-content{
+              margin: auto;
+              height: 28px;
+              width: 145px;
+              text-align: center;
+              line-height: 28px;
+              .user__reputation{
+                float: left;
+                padding-left: 10px;
+              }
+              .user__reputation-num{
+                float: left;
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+      }
+      .user-notice{
+        background-color: #FFFFFF;
+        clear: both;
+        &__main{
+          background-color: #EEEEEE;
+          clear: both;
+          .user-notice__tab{
+            .news{
+              float: left;
+              width: 350px;
+              height: 74px;
+              text-align: center;
+              line-height: 74px;
+              font-size: 16px;
+              font-weight: bold;
+              background-color: #EEEEEE;
+            }
+            .todo{
+              float: left;
+              width: 350px;
+              text-align: center;
+              height: 74px;
+              line-height: 74px;
+              font-size: 16px;
+              font-weight: bold;
+              background-color: #EEEEEE;
+            }
+            .select__notice{
+              border-top: 2px solid #ea352d;
+              background-color: #FFFFFF;
+            }
+          }
+        }
+        &__body{
+          clear: both;
+          background-color: #FFFFFF;
+          .users-news{
+            width: 700px;
+            height: 236px;
+            .news__list{
+              width: 700px;
+              height: 236px;
+              text-align: center;
+              .news__image{
+                width: 25%;
+              }
+              .news__text{
+                color: #ccc;
+                font-size: 16px;
+              }
+            }
+          }
+          .users-todo{
+            display: none;
+            width: 700px;
+            height: 236px;
+            .todo__list{
+              width: 700px;
+              height: 236px;
+              text-align: center;
+              .todo__image{
+                width: 25%;
+              }
+              .todo__text{
+                color: #ccc;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .user-page-items{
+      float: left;
+      margin-top: 40px;
+      width: 700px;
+      &__title{
+        padding: 0 16px;
+        background: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+        font-weight: bold;
+        text-align: center;
+      }
+      &-main{
+        &__tab{
+          .transaction{
+            float: left;
+            width: 350px;
+            height: 74px;
+            text-align: center;
+            line-height: 74px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #EEEEEE;
+          }
+          .past-transaction{
+            float: left;
+            width: 350px;
+            height: 74px;
+            text-align: center;
+            line-height: 74px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #EEEEEE;
+          }
+          .select__time{
+            border-top: 2px solid #ea352d;
+            background-color: #FFFFFF;
+          }
+        }
+        .user-page-items-main-content{
+            clear:both;
+            background-color: #FFFFFF;
+          .user-page-items-main-transaction{
+            width: 700px;
+            height: 236px;
+            .transaction__list{
+              width: 700px;
+              height: 236px;
+              text-align: center;
+              .transaction__image{
+                width: 25%;
+              }
+              .transaction__text{
+                color: #ccc;
+                font-size: 16px;
+              }
+            }
+          }
+          .user-page-items-main-past-transaction{
+            display: none;
+            width: 700px;
+            height: 236px;
+            .past-transaction__list{
+              width: 700px;
+              height: 236px;
+              text-align: center;
+              .transaction__image{
+                width: 25%;
+              }
+              .past-transaction__text{
+                color: #ccc;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
