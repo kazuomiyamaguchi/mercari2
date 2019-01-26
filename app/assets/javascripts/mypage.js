@@ -9,11 +9,11 @@ $(function(){
   });
   $('.user-page-items-main__tab li').click(function(){
     var index_num = $('.user-page-items-main__tab li').index(this);
-    $('.user-page-items-main-transaction').css('display','none');
-    $('.user-page-items-main-past-transaction').css('display','none');
+    $('.user-page-items-main__body__transaction').css('display','none');
+    $('.user-page-items-main__body__past-transaction').css('display','none');
     $('.user-page-items-main__tab li').removeClass('select__time');
     $(this).addClass('select__time');
-    $('.user-page-items-main-content ul').eq(index_num).css('display','block');
+    $('.user-page-items-main__body ul').eq(index_num).css('display','block');
   });
 });
 

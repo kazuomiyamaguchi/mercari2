@@ -1,7 +1,7 @@
 .user-page__body{
   width: 100vw;
   height: 1288px;
-  background-color:#f5f5f5;
+  background-color:$mainBackgroundGray;
   clear: both;
   padding-top: 40px;
   &-content{
@@ -21,7 +21,7 @@
           margin-top: 25px;
           &__link{
             text-decoration: none;
-            color: #000000;
+            color: $black;
             font-size: 14px;
             width: 700px;
             .user__icon{
@@ -57,10 +57,10 @@
         }
       }
       .user-notice{
-        background-color: #FFFFFF;
+        background-color: $white;
         clear: both;
         &__main{
-          background-color: #EEEEEE;
+          background-color: $btnMailGray;
           clear: both;
           .user-notice__tab{
             .news{
@@ -71,7 +71,7 @@
               line-height: 74px;
               font-size: 16px;
               font-weight: bold;
-              background-color: #EEEEEE;
+              background-color: $btnMailGray;
             }
             .todo{
               float: left;
@@ -81,21 +81,21 @@
               line-height: 74px;
               font-size: 16px;
               font-weight: bold;
-              background-color: #EEEEEE;
+              background-color: $btnMailGray;
             }
             .select__notice{
-              border-top: 2px solid #ea352d;
-              background-color: #FFFFFF;
+              border-top: 2px solid $mercariRed;
+              background-color: $white;
             }
           }
         }
         &__body{
           clear: both;
-          background-color: #FFFFFF;
+          background-color: $white;
           .users-news{
             width: 700px;
             height: 236px;
-            .news__list{
+            &__list{
               width: 700px;
               height: 236px;
               text-align: center;
@@ -103,7 +103,7 @@
                 width: 25%;
               }
               .news__text{
-                color: #ccc;
+                color: $gray;
                 font-size: 16px;
               }
             }
@@ -112,15 +112,15 @@
             display: none;
             width: 700px;
             height: 236px;
-            .todo__list{
+            &__list{
               width: 700px;
               height: 236px;
               text-align: center;
-              .todo__image{
+              &-image{
                 width: 25%;
               }
-              .todo__text{
-                color: #ccc;
+              &-text{
+                color: $gray;
                 font-size: 16px;
               }
             }
@@ -150,7 +150,7 @@
             line-height: 74px;
             font-size: 16px;
             font-weight: bold;
-            background-color: #EEEEEE;
+            background-color: $btnMailGray;
           }
           .past-transaction{
             float: left;
@@ -160,17 +160,17 @@
             line-height: 74px;
             font-size: 16px;
             font-weight: bold;
-            background-color: #EEEEEE;
+            background-color: $btnMailGray;
           }
           .select__time{
-            border-top: 2px solid #ea352d;
-            background-color: #FFFFFF;
+            border-top: 2px solid $mercariRed;
+            background-color: $white;
           }
         }
-        .user-page-items-main-content{
-            clear:both;
-            background-color: #FFFFFF;
-          .user-page-items-main-transaction{
+        &__body{
+          clear:both;
+          background-color: $white;
+          &__transaction{
             width: 700px;
             height: 236px;
             .transaction__list{
@@ -181,12 +181,12 @@
                 width: 25%;
               }
               .transaction__text{
-                color: #ccc;
+                color: $gray;
                 font-size: 16px;
               }
             }
           }
-          .user-page-items-main-past-transaction{
+          &__past-transaction{
             display: none;
             width: 700px;
             height: 236px;
@@ -194,11 +194,11 @@
               width: 700px;
               height: 236px;
               text-align: center;
-              .transaction__image{
+              .past-transaction__image{
                 width: 25%;
               }
               .past-transaction__text{
-                color: #ccc;
+                color: $gray;
                 font-size: 16px;
               }
             }

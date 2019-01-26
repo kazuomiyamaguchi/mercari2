@@ -34,16 +34,16 @@
         .user-notice__body
           %ul.users-news
             -# ここにif文(お知らせの有無による条件分岐)
-            %li.news__list
+            %li.users-news__list
               = image_tag("nonews_img.png", class: "news__image" )
               .news__text
                 現在、お知らせはありません
 
           %ul.users-todo
             -# ここにif文(やることの有無による条件分岐)
-            %li.todo__list
-              = image_tag("nonews_img.png", class: "todo__image" )
-              .todo__text
+            %li.users-todo__list
+              = image_tag("nonews_img.png", class: "users-todo__list-image" )
+              .users-todo__list-text
                 現在、やることリストはありません
 
     .user-page-items
@@ -55,17 +55,17 @@
             取引中
           %li.past-transaction
             過去の取引
-        .user-page-items-main-content
-          %ul.user-page-items-main-transaction
+        .user-page-items-main__body
+          %ul.user-page-items-main__body__transaction
             -# ここにif文(商品の有無による条件分岐)
             %li.transaction__list
               = image_tag("nonews_img.png", class: "transaction__image" )
               .transaction__text
                 取引中の商品がありません
-          %ul.user-page-items-main-past-transaction
+          %ul.user-page-items-main__body__past-transaction
             -# ここにif文(商品の有無による条件分岐)
             %li.past-transaction__list
-              = image_tag("nonews_img.png", class: "transaction__image" )
+              = image_tag("nonews_img.png", class: "past-transaction__image" )
               .past-transaction__text
                 過去に取引した商品がありません
 
