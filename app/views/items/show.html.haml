@@ -17,7 +17,34 @@
           = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
           = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
           = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
-      .item-content__table
+      %table.item-content__table
+        %tr
+          %th 出品者
+          %td 仮テキスト
+        %tr
+          %th カテゴリー
+          %td メンズ
+        %tr
+          %th ブランド
+          %td 仮テキスト
+        %tr
+          %th 商品のサイズ
+          %td L
+        %tr
+          %th 商品の状態
+          %td 未使用に近い
+        %tr
+          %th 配送料の負担
+          %td 送料込み（出品者負担）
+        %tr
+          %th 配送の方法
+          %td らくらくメルカリ便
+        %tr
+          %th 配送元地域
+          %td 東京
+        %tr
+          %th 発送日の目安
+          %td 2~3日で発送
     .item-price-box
       .item-price-box__price ¥ 3,380
       .item-price-box__tax (税込)
@@ -42,8 +69,14 @@
         ■ 商品詳細 ■
         シンプルな落ち着いたお色味でどんな場面にも合い、どんな服にも合わせやすいお鞄です。使用感有！角擦れはございませんが多少の汚れはあります。内側はとても綺麗です☆使わなくなったのでどなたか使っていただける方お願いします。
     .item-button-container
-      .item-button-container__leftbox ここにアイコン付きのリンク
-      .item-button-container__rightbox ここにアイコン付きのリンク
+      .item-button-container__leftbox
+        = link_to "/items", class: "item-button-container__leftbox-like" do
+          %i.fa.fa-heart-o いいね! 7
+        = link_to "/items", class: "item-button-container__leftbox-flag" do
+          %i.fa.fa-flag 不適切な商品の報告
+      .item-button-container__rightbox
+        = link_to "/items", class: "item-button-container__rightbox-lock" do
+          %i.fa.fa-lock あんしん・あんぜんへのとりくみ
   .item-page__body-message
     .item-page__body-message-container
       = render "items/message"
