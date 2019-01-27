@@ -10,17 +10,180 @@
     %h1.item-content__title 正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ
     .item-content
       .item-content__photo
+        .item-content__photo-main
+          = image_tag("m90055501397_1.jpg", class: "item-content__photo-main-large" )
+        .item-content__photo-subs
+          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
+          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
+          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
+          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
       .item-content__table
     .item-price-box
-    .item-buy-btn
+      .item-price-box__price ¥ 3,380
+      .item-price-box__tax (税込)
+      .item-price-box__shipping 送料込み
+    = link_to '購入画面に進む', "/items" ,class: "item-buy-btn" ,method: :get
     .item-description
+      %p.item-description__inner
+        ■商品ご覧頂き、誠にありがとうございます。
+        %br
+        ※今だけ、フォロワーになって下さった方に、300円のお値引きサービス中！！
+        %br
+        私の商品検索は、検索してください。
+        %br
+        質問がありましたらコメントでよろしくお願いします！
+        %br
+        %br
+        ■ 商品説明 ■
+        %br
+        まずはプロフを確認してください☆
+        %br
+        %br
+        ■ 商品詳細 ■
+        シンプルな落ち着いたお色味でどんな場面にも合い、どんな服にも合わせやすいお鞄です。使用感有！角擦れはございませんが多少の汚れはあります。内側はとても綺麗です☆使わなくなったのでどなたか使っていただける方お願いします。
     .item-button-container
+      .item-button-container__leftbox ここにアイコン付きのリンク
+      .item-button-container__rightbox ここにアイコン付きのリンク
   .item-page__body-message
+    .item-page__body-message-container
+      = render "items/message"
+    .item-page__body-message-comment
+      .item-page__body-message-comment-alert 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea{ type: "text" ,class: "item-page__body-message-comment-form" }
+      = link_to 'コメントする', "/items" ,class: "item-page__body-message-comment-btn" ,method: :get
   .item-page__body-nav-link
+    = link_to '前の商品', "/items" ,class: "item-page__body-nav-link-prv" ,method: :get
+    = link_to '次の商品', "/items" ,class: "item-page__body-nav-link-next" ,method: :get
   .item-page__body-social-box
+    .btn-group
+      = link_to "/items", class: "btn-group__fb" do
+        %i.fa.fa-facebook
+      = link_to "/items", class: "btn-group__tw" do
+        %i.fa.fa-twitter
+      = link_to "/items", class: "btn-group__pin" do
+        %i.fa.fa-pinterest
   .item-page__body-items-container
-    .items-content
-    .items-content
+    .items-pickup
+      .pickup-content
+        .pickup-content__title
+          = link_to 'その他の出品', "/items" ,class: "pickup-content__title-link" ,method: :get
+        .pickup-content-items
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
+      .pickup-content
+        .pickup-content__title
+          = link_to 'その他商品', "/items" ,class: "pickup-content__title-link" ,method: :get
+        .pickup-content-items
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
+          .pickup-content-items-box
+            = link_to "/items" ,class: "pickup-content__title-link" do
+              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+              .pickup-content-items-box-body
+                .pickup-content-items-box-body__name
+                  %h3 SLYセーター
+                .pickup-content-items-box-body__price
+                  ¥ 1,500
+                .pickup-content-items-box-body__favorite
+                  = fa_icon 'heart-o', class: 'favorite--gray'
+                  .pickup-content-items-box-body__favorite-num
+                    20
+                .pickup-content-items-box-body__tax
+                  (税込)
 
 / ここからフッターですープルリクエスト前に削除
 = render "items/footer"
