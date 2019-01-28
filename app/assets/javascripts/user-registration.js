@@ -30,8 +30,4 @@ $(document).on('turbolinks:load', function() {
     $('.finish').css('display','block');
   });
 
-  // $('.btn-submit').on("click", function(e) {
-  //   return e.preventDefault();
-  // });
-
 });
