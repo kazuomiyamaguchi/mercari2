@@ -162,19 +162,19 @@
                   = creditcard.text_field :number, autofocus: true, placeholder: "半角数字のみ", class: "input-default", maxlength: 19
                   %ul.signup-card-list
                     %li
-                      =image_tag('creditcard/visa.svg', width: "49", height: "20")
+                      =image_tag('creditcard/visa.svg', class: "signup-card-list__visa")
                     %li
-                      =image_tag('creditcard/master-card.svg', width: "34", height: "20")
+                      =image_tag('creditcard/master-card.svg', class: "signup-card-list__master")
                     %li
-                      =image_tag('creditcard/saison-card.svg', width: "30", height: "20")
+                      =image_tag('creditcard/saison-card.svg', class: "signup-card-list__saison")
                     %li
-                      =image_tag('creditcard/jcb.svg', width: "32", height: "20")
+                      =image_tag('creditcard/jcb.svg', class: "signup-card-list__jcb")
                     %li
-                      =image_tag('creditcard/american_express.svg', width: "21", height: "20")
+                      =image_tag('creditcard/american_express.svg', class: "signup-card-list__american")
                     %li
-                      =image_tag('creditcard/dinersclub.svg', width: "32", height: "20")
+                      =image_tag('creditcard/dinersclub.svg', class: "signup-card-list__diners")
                     %li
-                      =image_tag('creditcard/discover.svg', width: "32", height: "20")
+                      =image_tag('creditcard/discover.svg', class: "signup-card-list__discover")
                 .single-main__container__inner__body__field.signup-form-expire
                   = creditcard.label :expiration_card, "有効期限"
                   %span.form-require 必須

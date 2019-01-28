@@ -134,6 +134,34 @@
               li {
                 display: inline-block;
               }
+              &__visa {
+                width: 49px;
+                height: 20px;
+              }
+              &__master {
+                width: 34px;
+                height: 20px;
+              }
+              &__saison {
+                width: 30px;
+                height: 20px;
+              }
+              &__jcb {
+                width: 32px;
+                height: 20px;
+              }
+              &__american {
+                width: 21px;
+                height: 20px;
+              }
+              &__diners {
+                width: 32px;
+                height: 20px;
+              }
+              &__discover {
+                width: 32px;
+                height: 20px;
+              }
             }
             .signup-form-expire {
               &__wrap {
