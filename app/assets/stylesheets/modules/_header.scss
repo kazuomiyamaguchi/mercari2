@@ -18,7 +18,7 @@
       border: 0.5px #CCCCCC solid;
       border-radius: 3px;
       color: #000;
-      background-color: #F5F5F5;
+      background-color: $mainBackgroundGray;
       position: relative;
       &-icon{
         position: absolute;
@@ -37,14 +37,14 @@
       height: 32px;
       &__nav-category{
         text-decoration: none;
-        color: #000;
+        color: $black;
         font-size: 14px;
         line-height: 32px;
         height: 38px;
       }
       &__nav-brand{
         text-decoration: none;
-        color: #000;
+        color: $black;
         font-size: 14px;
         padding: 0 0 0 16px;
         line-height: 32px;
@@ -60,7 +60,7 @@
           padding: 0 0 0 16px;
           &-link{
             text-decoration: none;
-            color: #000;
+            color: $black;
             .member-photo-dummy{
               .member-photo{
                 width: 32px;
@@ -83,7 +83,7 @@
           position: relative;
           &-link{
             text-decoration: none;
-            color: #000;
+            color: $black;
             .bell{}
           }
         }
@@ -95,8 +95,40 @@
           position: relative;
           &-link{
             text-decoration: none;
-            color: #000;
+            color: $black;
             .check{}
+          }
+        }
+        &-sign-in{
+          font-size: 14px;
+          display: inline-block;
+          padding: 0 10px;
+          line-height: 32px;
+          position: relative;
+          background: $mercariRed;
+          border: 1px solid $mercariRed;
+          border-radius: 4px;
+
+          .sign-in-tag{
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+
+          }
+        }
+        &-sign-up{
+          font-size: 14px;
+          display: inline-block;
+          padding: 0 10px;
+          line-height: 32px;
+          position: relative;
+          background: $white;
+          border: 1px solid $lightBlue;
+          border-radius: 4px;
+          .sign-up-tag{
+            text-decoration: none;
+            color: $lightBlue;
+            text-align: center;
           }
         }
       }
