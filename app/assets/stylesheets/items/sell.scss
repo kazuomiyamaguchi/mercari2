@@ -1,0 +1,337 @@
+.all-container{
+  background-color: $mainBackgroundGray;
+  width: 100vw;
+  height: 100%;
+  .sell-body{
+    width: 700px;
+    background-color: $white;
+    margin: auto;
+    &__title{
+      width: 700px;
+      height: 97px;
+      text-align: center;
+      line-height: 97px;
+      font-size: 22px;
+      font-weight: bold;
+      border-bottom: solid 0.5px $btnMailGray;
+    }
+    &-picture{
+      padding: 40px;
+      border-bottom: solid 0.5px $btnMailGray;
+      &-header{
+        &__title{
+          float: left;
+          font-size: 16px;
+          font-weight: bold;
+
+        }
+        &__mark{
+          @include necessaryMark;
+
+        }
+        &__text{
+          font-size: 10px;
+          clear: both;
+          margin: 12px 0 12px;
+        }
+      }
+      &-body{
+        &-upload-box{
+          background-color: $btnMailGray;
+          border: dashed 1px $gray;
+          width: 540px;
+          min-height: 104px;
+          padding: 40px;
+          // line-height: 52px;
+          text-align: center;
+          vertical-align: middle;
+          display: table-cell;
+          &__picture{
+            display: none;
+          }
+          &__text{
+            font-size: 12px;
+            font-weight: 400;
+
+          }
+        }
+      }
+    }
+    &-information{
+      padding: 40px;
+      border-bottom: solid 0.5px $btnMailGray;
+      &-content{
+        width: 100%;
+        height: 22px;
+        &__name{
+          @include inputTitle;
+        }
+        &__mark{
+           @include necessaryMark;
+        }
+      }
+      &__input{
+        width: calc(100% - 34px);
+        height: 28px;
+        padding: 10px 16px 8px;
+        margin-bottom: 40px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        background: #fff;
+        line-height: 1.5;
+      }
+      &-content{
+         &__name{
+          @include inputTitle;
+         }
+         &__mark{
+           @include necessaryMark;
+         }
+      }
+      &__textarea{
+        width: 100%;
+        max-width: calc(100% - 22px);
+        min-height: 104px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+    &-detail{
+      padding: 40px;
+      border-bottom: solid 0.5px $btnMailGray;
+      overflow: hidden;
+      &__title{
+        @include sideTitle;
+      }
+      &-contents{
+        float: left;
+        width: 400px;
+        &__category{
+          &__name{
+            @include inputTitle;
+          }
+          &__mark{
+             @include necessaryMark;
+          }
+        }
+        .dummy__input1{
+          @include inputTag;
+        }
+        &__states{
+          &__name{
+            @include inputTitle;
+          }
+          &__mark{
+             @include necessaryMark;
+          }
+        }
+        .dummy__input2{
+          @include inputTag;
+        }
+      }
+    }
+    &-delivery{
+      padding: 40px;
+      border-bottom: solid 0.5px $btnMailGray;
+      overflow: hidden;
+      &-header{
+        float: left;
+        &__title{
+          @include sideTitle;
+        }
+          .sell-body-delivery-header__question-circle{
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0099e8;
+            line-height: 14px;
+            font-size: 12px;
+            text-align: center;
+          }
+      }
+      &-contents{
+        float: left;
+        width: 400px;
+        &__burden{
+          &-notice{
+            &__name{
+              @include inputTitle;
+            }
+            &__mark{
+               @include necessaryMark;
+            }
+          }
+          .dummy__input3{
+            @include inputTag;
+          }
+        }
+        &__method{
+          &-notice{
+            &__name{
+              @include inputTitle;
+            }
+            &__mark{
+               @include necessaryMark;
+            }
+          }
+          .dummy__input4{
+            @include inputTag;
+          }
+        }
+        &__region{
+          &-notice{
+            &__name{
+              @include inputTitle;
+            }
+            &__mark{
+               @include necessaryMark;
+            }
+          }
+          &-select{
+            @include inputTag;
+          }
+        }
+        &__days{
+          &-notice{
+            &__name{
+              @include inputTitle;
+            }
+            &__mark{
+              @include necessaryMark;
+            }
+          }
+          .dummy__input5{
+            @include inputTag;
+          }
+        }
+      }
+    }
+    &-price{
+      padding: 40px;
+      border-bottom: solid 0.5px $btnMailGray;
+      overflow: hidden;
+      &-side{
+        float: left;
+        &__title{
+          @include sideTitle;
+          .sell-body-price-side__question-circle{
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0099e8;
+            line-height: 14px;
+            font-size: 12px;
+            text-align: center;
+          }
+        }
+      }
+      &-main{
+        float: left;
+        width: 400px;
+        &-input{
+          &__box{
+            height: 50px;
+            line-height: 50px;
+            padding-bottom: 24px;
+            border-bottom: solid 0.5px $gray;
+            &__name{
+              @include inputTitle;
+            }
+            &__mark{
+               @include necessaryMark;
+               margin-top: 15px;
+            }
+            &__yen{
+              float: right;
+              width: 25% ;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+              margin-bottom: 20px;
+              height: 48px;
+              background-color: #FFFFFF;
+            }
+            &__yen-mark{
+              float: right;
+              margin-right: 10px;
+            }
+          }
+        }
+        &-commission{
+            &__box{
+              border-bottom: solid 0.5px $gray;
+              padding: 24px 0 24px;
+              height: 24px;
+              &__name{
+                float: left;
+                font-size: 14px;
+              }
+              &__ans{
+                float: right;
+              }
+          }
+        }
+        &-profit{
+          &__box{
+            height: 34px;
+            padding : 24px 0 24px;
+            border-bottom: solid 0.5px $gray;
+            &__name{
+              @include inputTitle;
+            }
+            &__ans{
+              float: right;
+              font-weight: bold;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+    &-exhibit{
+      padding: 40px;
+      overflow: hidden;
+      &__caution{
+        color: #333;
+        font-size: 14px;
+        &-link{
+          text-decoration: none;
+          color: $lightBlue;
+          font-size: 14px;
+        }
+      }
+      &__send{
+        margin-top: 40px;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color:  $white;
+        text-align: center;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+      }
+      &__exit{
+        text-decoration: none;
+        &-link{
+          margin: 24px auto 0;
+          width: 50%;
+          height: 48px;
+          line-height: 48px;
+          font-size: 14px;
+          text-align: center;
+          background:#aaa;
+          color:  $white;
+        }
+      }
+    }
+  }
+}
