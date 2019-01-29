@@ -12,17 +12,25 @@
         ブランドから探す
     .header-bottom--right
       %ul.bottom--right__nav
-        %li.header-bottom--right__nav-mypage
-          = link_to "/items" ,class: "header-bottom--right__nav-mypage-link" do
-            .member-photo-dummy
-              = image_tag("member_photo_noimage_thumb.png",alt: "プロフィール",class: "member-photo")
-              .text-mypage
-                マイページ
-        %li.header-bottom--right__nav-news
-          = link_to "/items" ,class: "header-bottom--right__nav-news-link" do
-            = fa_icon 'bell-o', class: "bell"
-            %span お知らせ
-        %li.header-bottom--right__nav-todo
-          = link_to "/items" ,class: "header-bottom--right__nav-todo-link" do
-            = fa_icon 'check',class: "check"
-            %span やることリスト
+        -# = if user_signed_in?
+        -#   %li.header-bottom--right__nav-mypage
+        -#     = link_to "/items" ,class: "header-bottom--right__nav-mypage-link" do
+        -#       .member-photo-dummy
+        -#         = image_tag("member_photo_noimage_thumb.png",alt: "プロフィール",class: "member-photo")
+        -#         .text-mypage
+        -#           マイページ
+        -#   %li.header-bottom--right__nav-news
+        -#     = link_to "/items" ,class: "header-bottom--right__nav-news-link" do
+        -#       = fa_icon 'bell-o', class: "bell"
+        -#       %span お知らせ
+        -#   %li.header-bottom--right__nav-todo
+        -#     = link_to "/items" ,class: "header-bottom--right__nav-todo-link" do
+        -#       = fa_icon 'check',class: "check"
+        -#       %span やることリスト
+        -# = else
+        %li.header-bottom--right__nav-sign-in
+          = link_to "/items" ,class: "sign-in-tag" do
+            ログイン
+        %li.header-bottom--right__nav-sign-up
+          = link_to "/items" ,class: "sign-up-tag" do
+            新規会員登録

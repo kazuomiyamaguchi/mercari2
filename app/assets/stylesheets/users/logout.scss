@@ -1,0 +1,30 @@
+.user-logout__body{
+  width: 100vw;
+  background-color: $mainBackgroundGray;
+  height: 1280px;
+  padding-top: 40px;
+  .user-logout-content{
+    width: 1020px;
+    margin: auto;
+    .user-logout-content__main{
+      float: left;
+      width: 700px;
+      height: 180px;
+      background-color: $white;;
+      .user-logout__link{
+        background-color: $mercariRed;
+        width: 320px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 14px;
+        margin: auto;
+        margin-top: 65px;
+        .user-logout__link-tag{
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

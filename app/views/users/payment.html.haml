@@ -1,0 +1,19 @@
+= render "items/header"
+= render "share/bread-crumps"
+
+.my-page-payment__body
+  .my-page-payment__body__content
+    = render "share/side_bar"
+
+    .my-page-payment__body__main
+      %h2.my-page-payment__body__main__head 支払い方法
+      .my-page-payment__body__main__inner
+        .my-page-payment__body__main__inner__body
+          %h3.my-page-payment__body__main__inner__body__sub-head クレジットカード一覧
+          .my-page-payment__body__main__inner__body__setting-add-card
+            =link_to user_credit_path ,class: "btn-default btn-red" do
+              = fa_icon "credit-card", class: "icon-card"
+              クレジットカードを追加する
+          .my-page-payment__body__main__inner__body__setting-not-regist
+            支払い方法について
+            = fa_icon "angle-right", class: "icon-angle-right"
