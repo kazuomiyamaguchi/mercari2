@@ -1,22 +1,209 @@
 .single-container
 
-  = render 'devise/registrations/header'
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    %section.signup
+      -# 会員登録方法選択画面
+      = render 'devise/registrations/header'
 
-  .single-main
-    .single-main__container
-      %h2.single-main__container__head 新規会員登録
-      .single-main__container__inner
-        .single-main__container__inner__body
-          -# リンク先は仮置き。
-          -# 本来は会員情報入力画面に遷移するパスを指定する。
-          = link_to "#", class: "btn-default btn-mail" do
-            = fa_icon 'envelope', class: "icon-mail"
-            メールアドレスで登録
-          = link_to "#", class: "btn-default btn-sns btn-sns__facebook" do
-            =fa_icon 'facebook-square', class: "icon-facebook"
-            facebookで登録
-          = link_to "#", class: "btn-default btn-sns btn-sns__google" do
-            =fa_icon 'google-plus', class: "icon-google"
-            googleで登録
+      .single-main
+        .single-main__container
+          %h2.single-main__container__head 新規会員登録
+          .single-main__container__inner
+            .single-main__container__inner__body
+              -# リンク先は仮置き。
+              -# 本来は会員情報入力画面に遷移するパスを指定する。
+              %button{ type: "button", class: "btn-default btn-mail" }
+                = fa_icon 'envelope', class: "icon-mail"
+                メールアドレスで登録
+              = link_to "#", class: "btn-default btn-sns btn-sns__facebook" do
+                =fa_icon 'facebook-square', class: "icon-facebook"
+                facebookで登録
+              = link_to "#", class: "btn-default btn-sns btn-sns__google" do
+                =fa_icon 'google-plus', class: "icon-google"
+                googleで登録
 
-  = render 'devise/registrations/footer'
+    -# 会員情報入力画面
+    %section.registration
+      -# プログレスバーは一旦保留。
+      = render 'devise/registrations/header2'
+
+      .single-main
+        .single-main__container
+          %h2.single-main__container__head 会員情報入力
+          .single-main__container__inner
+            .single-main__container__inner__body
+              .single-main__container__inner__body__field
+                = f.label :nickname, "ニックネーム"
+                %span.form-require 必須
+                = f.text_field :nickname, autofocus: true, placeholder: "例）メルカリ太郎", class: "input-default"
+              .single-main__container__inner__body__field
+                = f.label :email, "メールアドレス"
+                %span.form-require 必須
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "input-default"
+              .single-main__container__inner__body__field
+                = f.label :password, "パスワード"
+                %span.form-require 必須
+                = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上", class: "input-default"
+              .single-main__container__inner__body__field
+                = f.label :password_confirmation, "パスワード（確認）"
+                %span.form-require 必須
+                = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "input-default"
+
+              .single-main__container__inner__body__field
+                -# 仮置き
+                = image_tag("reCAPTCHA.png", width: "300", height: "74")
+
+              .single-main__container__inner__body
+                %button{ type: "button", class: "btn-default btn-red btn-registration" }
+                  次へ進む
+
+    -#電話番号認証画面
+    %section.sms-confirmation
+      = render 'devise/registrations/header2'
+
+      .single-main
+        .single-main__container
+          %h2.single-main__container__head 電話番号の確認
+          .single-main__container__inner
+            .single-main__container__inner__body
+              .single-main__container__inner__body__field
+                = f.label :携帯電話の番号
+                = f.telephone_field :phone_number, autofocus: true, placeholder: "携帯電話の番号を入力", class: "input-default"
+              %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+
+              %button{ type: "button", class: "btn-default btn-red btn-sms" }
+                SMSを送信する
+
+              %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+
+              %p.text-right
+                電話番号の確認が必要な理由
+                = fa_icon "angle-right", class: "icon-angle-right"
+
+
+    -# 住所入力画面
+    %section.address-registration
+      = render 'devise/registrations/header2'
+
+      .single-main
+        .single-main__container
+          %h2.single-main__container__head 住所登録
+          .single-main__container__inner
+            .single-main__container__inner__body
+              .single-main__container__inner__body__field
+                = f.label :name, "お名前"
+                %span.form-require 必須
+                = f.text_field :last_name, autofocus: true, placeholder: "例）山田", class: "input-default"
+                = f.text_field :first_name, autofocus: true, placeholder: "例）彩", class: "input-default"
+              .single-main__container__inner__body__field
+                = f.label :name, "お名前カナ"
+                %span.form-require 必須
+                = f.text_field :last_name_kana, autofocus: true, placeholder: "例）ヤマダ", class: "input-default"
+                = f.text_field :first_name_kana, autofocus: true, placeholder: "例）アヤ", class: "input-default"
+
+                = f.fields_for :address, @user.build_address do |address|
+                  .single-main__container__inner__body__field
+                    = address.label :postcode, "郵便番号"
+                    %span.form-arbitrary 任意
+                    = address.text_field :postcode, autofocus: true, placeholder: "例）1234567", class: "input-default"
+                  .single-main__container__inner__body__field
+                    = address.label :prefecture, "都道府県"
+                    %span.form-require 必須
+                    -# 都道府県選択のところは仮置き
+                    = address.select :prefecture_id, [["北海道","1"], ["東京都", "2"], ["神奈川県", "3"], ["沖縄県", "4"]], {}, class: "input-default"
+                  .single-main__container__inner__body__field
+                    = address.label :city, "市町村"
+                    %span.form-require 必須
+                    = address.text_field :city, autofocus: true, placeholder: "例）横浜市緑区", class: "input-default"
+                  .single-main__container__inner__body__field
+                    = address.label :address, "番地"
+                    %span.form-require 必須
+                    = address.text_field :address, autofocus: true, placeholder: "例）青山1−1−1", class: "input-default"
+                  .single-main__container__inner__body__field
+                    = address.label :building_name, "建物名"
+                    %span.form-arbitrary 任意
+                    = address.text_field :building_name, autofocus: true, placeholder: "例）柳ビル103", class: "input-default"
+
+                  .single-main__container__inner__body
+                    %button{ type: "button", class: "btn-default btn-red btn-address" }
+                      次へ進む
+    -# 支払い方法画面
+    %section.method-payment
+      = render 'devise/registrations/header2'
+
+      .single-main
+        .single-main__container
+          %h2.single-main__container__head 支払い方法
+          .single-main__container__inner
+            .single-main__container__inner__body
+              %h3.single-main__container__inner__body__sub-head クレジットカード一覧
+              .single-main__container__inner__body__setting-add-card
+                %button{ type: "button", class: "btn-default btn-red btn-add-card" }
+                  = fa_icon "credit-card", class: "icon-card"
+                  クレジットカードを追加する
+              .single-main__container__inner__body__setting-not-regist
+                %span 支払い方法について
+                = fa_icon "angle-right", class: "icon-angle-right"
+
+    -# クレジットカード情報入力
+    %section.card-registration
+      = render 'devise/registrations/header2'
+
+      .single-main
+        .single-main__container
+          %h2.single-main__container__head クレジットカード情報入力
+          .single-main__container__inner
+            .single-main__container__inner__body
+              = f.fields_for :creditcard, @user.build_creditcard do |creditcard|
+                .single-main__container__inner__body__field
+                  = creditcard.label :number, "カード番号"
+                  %span.form-require 必須
+                  = creditcard.text_field :number, autofocus: true, placeholder: "半角数字のみ", class: "input-default", maxlength: 19
+                  %ul.signup-card-list
+                    %li
+                      =image_tag('creditcard/visa.svg', class: "signup-card-list__visa")
+                    %li
+                      =image_tag('creditcard/master-card.svg', class: "signup-card-list__master")
+                    %li
+                      =image_tag('creditcard/saison-card.svg', class: "signup-card-list__saison")
+                    %li
+                      =image_tag('creditcard/jcb.svg', class: "signup-card-list__jcb")
+                    %li
+                      =image_tag('creditcard/american_express.svg', class: "signup-card-list__american")
+                    %li
+                      =image_tag('creditcard/dinersclub.svg', class: "signup-card-list__diners")
+                    %li
+                      =image_tag('creditcard/discover.svg', class: "signup-card-list__discover")
+                .single-main__container__inner__body__field.signup-form-expire
+                  = creditcard.label :expiration_card, "有効期限"
+                  %span.form-require 必須
+                  .signup-form-expire__wrap
+                    = creditcard.select :expiration_month, [["1", "1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"], ["11","11"], ["12","12"]]
+                    %span 月
+                  .signup-form-expire__wrap
+                    = creditcard.select :expiration_year, [["19", "19"], ["20","20"], ["21","21"], ["22","22"], ["23","23"], ["24","24"], ["25","25"], ["26","26"], ["27","27"], ["28","28"], ["29","29"]]
+                    %span 年
+
+                .single-main__container__inner__body__field
+                  = creditcard.label :security_code, "セキュリティコード"
+                  %span.form-require 必須
+                  = creditcard.text_field :security_code, autofocus: true, placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default"
+                  %p.info カード裏面の番号とは？
+
+              %button{ type: "submit", class: "btn-default btn-red btn-add-card-info btn-submit" }
+                追加する
+
+    -# 完了画面
+    %section.finish
+      = render 'devise/registrations/header2'
+
+      .single-main
+        .single-main__container
+          %h2.single-main__container__head 登録完了
+          .single-main__container__inner
+            .single-main__container__inner__body
+              %p 登録が完了しました。
+              = link_to "メルカリを始める", items_path, class: "btn-default btn-red"
+
+    = render 'devise/registrations/footer'
