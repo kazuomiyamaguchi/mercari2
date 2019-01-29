@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   def mypage
   end
 
+  def payment
+  end
+
+  def credit
+  end
 
   def logout
   end
