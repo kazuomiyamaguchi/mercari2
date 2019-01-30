@@ -19,9 +19,9 @@ set :keep_releases, 5
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  secret_key_base: ENV["SECRET_KEY_BASE"],
-  aws_access_key_id: ENV["MERCARI2_ACCESS_KEY_ID"],
-  aws_secret_access_key: ENV["MERCARI2_SECRET_ACCESS_KEY"]
+  MERCARI2_ACCESS_KEY_ID: ENV["MERCARI2_ACCESS_KEY_ID"],
+  MERCARI2_SECRET_ACCESS_KEY: ENV["MERCARI2_SECRET_ACCESS_KEY"],
+  SECRET_KEY_BASE: ENV["SECRET_KEY_BASE"]
 }
 
 set :linked_files, %w{ config/secrets.yml }
