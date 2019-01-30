@@ -1,13 +1,15 @@
 = render 'header'
 
 .body
-  .body__top-banner
-    = image_tag("top_banner.png",alt: "top-banner",class: "body__top-banner-picture")
-
-
-
-
-
+  #main-slider.body__top-banner.owl-carousel
+    .body__top-banner-picture
+      = link_to image_tag("banner-bokurano-heisei-entertainment.png",alt: "僕たち平成エンターテイメント"), "https://www.mercari.com/jp/"
+    .body__top-banner-picture
+      = link_to image_tag("banner-featured-hobby.jpg",alt: "趣味を始めよう"), "https://www.mercari.com/jp/"
+    .body__top-banner-picture
+      = link_to image_tag("banner-hajimeru-fortune.jpg",alt: "始めるおみくじ"), "https://www.mercari.com/jp/"
+    .body__top-banner-picture
+      = link_to image_tag("banner-new-register-2019.jpg",alt: "機会限定ポイントプレゼント"), "https://www.mercari.com/jp/"
   / 以下は触らない
   .body-pickup
     .pickup__title

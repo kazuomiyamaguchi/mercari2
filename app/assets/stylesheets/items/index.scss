@@ -3,12 +3,21 @@
   background-color: $mainBackgroundGray;
   padding-bottom: 40px;
   &__top-banner{
-    margin: 0 auto;
+    height: auto;
     width: 100vw;
-    &-picture{
-      background-size: contain;
-      max-width: 100%;
-      margin: 0 auto;
+    &-picture {
+      height: auto;
+      width: 100vw;
+      a {
+        display: block;
+        height: auto;
+        width: 100%;
+        img {
+          display: block;
+          height: auto;
+          width: 100%;
+        }
+      }
     }
   }
   &-pickup{
