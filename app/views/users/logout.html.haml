@@ -6,7 +6,6 @@
     = render "share/side_bar"
     .user-logout-content__main
       .user-logout__link
-        = link_to "/items" ,class: "user-logout__link-tag" do
-          ログアウト
+        = link_to "ログアウト", destroy_user_session_path, class: "user-logout__link-tag"
 
 = render "items/footer"
