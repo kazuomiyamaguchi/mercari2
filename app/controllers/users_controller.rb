@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :set_user, only:[:prof, :identification, :mypage]
+
   def new
   end
 
@@ -21,6 +24,11 @@ class UsersController < ApplicationController
   end
 
   def logout
+  end
+
+  private
+  def set_user
+    @user = current_user
   end
 
 end
