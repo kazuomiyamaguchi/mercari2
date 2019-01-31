@@ -2,12 +2,6 @@ class UsersController < ApplicationController
 
   before_action :set_user, only:[:mypage, :prof, :identification]
 
-  def new
-  end
-
-  def show
-  end
-
   def mypage
   end
 

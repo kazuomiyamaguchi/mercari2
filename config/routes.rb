@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root  'items#index'
   get 'items/buy' => "items#buy"
   resources :items, only: [:index, :show, :new, :create]
-  resources :users, only: [:show]
   get 'user/identification' => 'users#identification'
   get 'user/prof' => 'users#prof'
   get 'user/mypage' => 'users#mypage'
