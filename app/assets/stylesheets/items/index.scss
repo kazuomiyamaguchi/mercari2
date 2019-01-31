@@ -107,4 +107,25 @@
       }
     }
   }
+  .footer-sell-btn {
+    position: fixed;
+    width: 160px;
+    height: 160px;
+    font-size: 22px;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+    border-radius: 50%;
+    background-color: #ea352d;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    p {
+      margin-top: 32px;
+    }
+    i {
+      margin-top: 8px;
+      font-size: 54px;
+    }
+  }
 }
