@@ -19,8 +19,8 @@
               お名前
             .confirmation__text-content-necessary-mark
               必須
-          %input{class: "confirmation__input",placeholder: "例) 山田"}
-          %input{class: "confirmation__input",placeholder: "例) 彩"}
+          %input{class: "confirmation__input",placeholder: "例) 山田", value: "#{@user.last_name}"}
+          %input{class: "confirmation__input",placeholder: "例) 彩", value: "#{@user.first_name}"}
 
         .mypage-confirmation-main-form
           .confirmation__text-content
@@ -28,8 +28,8 @@
               お名前カナ
             .confirmation__text-content-necessary-mark
               必須
-          %input{class: "confirmation__input",placeholder: "例) ヤマダ"}
-          %input{class: "confirmation__input",placeholder: "例) アヤ"}
+          %input{class: "confirmation__input",placeholder: "例) ヤマダ", value: "#{@user.last_name_kana}"}
+          %input{class: "confirmation__input",placeholder: "例) アヤ", value: "#{@user.first_name_kana}"}
 
         .mypage-confirmation-main-form
           .confirmation__text-content
@@ -37,7 +37,7 @@
               郵便番号
             .confirmation__text-content-option-mark
               任意
-          %input{class: "confirmation__input",placeholder: "例) 12345678"}
+          %input{class: "confirmation__input",placeholder: "例) 12345678", value: "#{@user.address.postcode}"}
 
         .mypage-confirmation-main-form
           .confirmation__text-content
@@ -46,6 +46,7 @@
             .confirmation__text-content-necessary-mark
               必須
           = render "share/select-prefecture"
+          -# valueにprefecture_idは入れた。
 
         .mypage-confirmation-main-form
           .confirmation__text-content
@@ -53,7 +54,7 @@
               市区町村
             .confirmation__text-content-necessary-mark
               必須
-          %input{class: "confirmation__input",placeholder: "例) 横浜市"}
+          %input{class: "confirmation__input",placeholder: "例) 横浜市", value: "#{@user.address.city}"}
 
         .mypage-confirmation-main-form
           .confirmation__text-content
@@ -61,7 +62,7 @@
               番地
             .confirmation__text-content-necessary-mark
               必須
-          %input{class: "confirmation__input",placeholder: "例) 青山1-1-1"}
+          %input{class: "confirmation__input",placeholder: "例) 青山1-1-1", value: "#{@user.address.address}"}
 
         .mypage-confirmation-main-form
           .confirmation__text-content
@@ -69,7 +70,7 @@
               建物名
             .confirmation__text-content-option-mark
               任意
-          %input{class: "confirmation__input",placeholder: "例) 柳ビル103"}
+          %input{class: "confirmation__input",placeholder: "例) 柳ビル103", value: "#{@user.address.building_name}"}
 
         .mypage-confirmation-main-form
           .confirmation__text-content
