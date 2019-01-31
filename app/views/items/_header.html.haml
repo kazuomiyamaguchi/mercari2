@@ -5,11 +5,46 @@
       = fa_icon 'search', class: 'header-top__search-icon'
 
   .header-bottom
+    / ここからメニュー
     .header-bottom--left
-      = link_to "/items" ,class: "header-bottom--left__nav-category" do
-        カテゴリーから探す
-      = link_to "/items" ,class: "header-bottom--left__nav-brand" do
-        ブランドから探す
+      %ul.pc-header-nav
+        %li
+          %h2
+            = link_to "/items" ,class: "pc-header-nav-root" do
+              カテゴリーから探す
+          %ul.pc-header-nav__parent-wrap
+            %li.pc-header-nav__parent
+              %h3
+                = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
+                  レディース
+              %ul.pc-header-nav__child-wrap
+                %li.pc-header-nav__child
+                  %h4
+                    = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
+                      トップスアウター
+                  %ul.pc-header-nav__grand-child-wrap
+                    %li.pc-header-nav__grand-child
+                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
+                        Tシャツカットソー
+                    %li.pc-header-nav__grand-child
+                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
+                        ブラウス
+                %li.pc-header-nav__child
+                  %h4
+                    = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
+                      ジャケット/アウター
+                  %ul.pc-header-nav__grand-child-wrap
+                    %li.pc-header-nav__grand-child
+                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
+                        仮テキスト
+                    %li.pc-header-nav__grand-child
+                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
+                        仮テキスト
+        %li
+          %h3.header-bottom--left
+            = link_to "/items" ,class: "header-bottom--left__nav-brand" do
+              ブランドから探す
+    / ここまでメニュー
     .header-bottom--right
       %ul.bottom--right__nav
         -# = if user_signed_in?
