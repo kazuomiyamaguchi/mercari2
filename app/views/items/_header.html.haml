@@ -10,40 +10,31 @@
       %ul.pc-header-nav
         %li
           %h2
-            = link_to "/items" ,class: "pc-header-nav-root" do
-              カテゴリーから探す
+            = link_to "カテゴリーから探す", "/items",class: "pc-header-nav-root"
           %ul.pc-header-nav__parent-wrap
             %li.pc-header-nav__parent
               %h3
-                = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
-                  レディース
+                = link_to "レディース", "/items" ,class: "header-bottom--left__nav-link-item"
               %ul.pc-header-nav__child-wrap
                 %li.pc-header-nav__child
                   %h4
-                    = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
-                      トップスアウター
+                    = link_to "トップスアウター","/items" ,class: "header-bottom--left__nav-link-item"
                   %ul.pc-header-nav__grand-child-wrap
                     %li.pc-header-nav__grand-child
-                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
-                        Tシャツカットソー
+                      = link_to "トップスカットソー", "/items" ,class: "header-bottom--left__nav-link-item"
                     %li.pc-header-nav__grand-child
-                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
-                        ブラウス
+                      = link_to "ブラウス", "/items" ,class: "header-bottom--left__nav-link-item"
                 %li.pc-header-nav__child
                   %h4
-                    = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
-                      ジャケット/アウター
+                    = link_to "ジャケットアウター", "/items" ,class: "header-bottom--left__nav-link-item"
                   %ul.pc-header-nav__grand-child-wrap
                     %li.pc-header-nav__grand-child
-                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
-                        仮テキスト
+                      = link_to "仮テキスト", "/items" ,class: "header-bottom--left__nav-link-item"
                     %li.pc-header-nav__grand-child
-                      = link_to "/items" ,class: "header-bottom--left__nav-link-item" do
-                        仮テキスト
+                      = link_to "仮テキスト", "/items" ,class: "header-bottom--left__nav-link-item"
         %li
           %h3.header-bottom--left
-            = link_to "/items" ,class: "header-bottom--left__nav-brand" do
-              ブランドから探す
+            = link_to "ブランドから探す", "/items" ,class: "header-bottom--left__nav-brand"
     / ここまでメニュー
     .header-bottom--right
       %ul.bottom--right__nav
@@ -64,8 +55,6 @@
         -#       %span やることリスト
         -# = else
         %li.header-bottom--right__nav-sign-in
-          = link_to "/items" ,class: "sign-in-tag" do
-            ログイン
+          = link_to "ログイン", "/items" ,class: "sign-in-tag"
         %li.header-bottom--right__nav-sign-up
-          = link_to "/items" ,class: "sign-up-tag" do
-            新規会員登録
+          = link_to "新規会員登録", "/items" ,class: "sign-up-tag"
