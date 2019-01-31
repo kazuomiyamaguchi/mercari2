@@ -3,18 +3,36 @@
   height: 100%;
   width: 100%;
 
+  section.registration {
+    display: none;
+  }
+  section.sms-confirmation {
+    display: none;
+  }
+  section.address-registration {
+    display: none;
+  }
+  section.method-payment {
+    display: none;
+  }
+  section.card-registration {
+    display: none;
+  }
+  section.finish{
+    display: none;
+  }
+
   .single-main {
     display: block;
 
     &__container {
       background-color: $white;
-      height: 408px;
       width:700px;
       margin: 0 auto;
 
       &__head {
         font-size: 22px;
-        line-height: 22px;
+        line-height: 33px;
         padding: 32px 16px;
         text-align: center;
         font-weight: bold;
@@ -65,6 +83,133 @@
                 @include iconPosition;
               }
             }
+          }
+          & :first-child {
+            margin-top: 0;
+          }
+
+          .btn-red {
+            background-color: $mercariRed;
+            position: relative;
+            margin-top: 50px;
+            color: $white;
+          }
+          &__field {
+            width: 320px;
+            margin-top: 40px;
+
+            label {
+              font-size: 14px;
+            }
+            .form-require {
+              background-color: $mercariRed;
+              margin-left: 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: $white;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            .form-arbitrary {
+              background-color: $gray;
+              margin-left: 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: $white;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            .input-default {
+              width: 100%;
+              margin-top: 8px;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid $gray;
+              box-sizing: border-box;
+              background-color: $white;
+            }
+            .signup-card-list {
+              margin-top: 8px;
+              li {
+                display: inline-block;
+              }
+              &__visa {
+                width: 49px;
+                height: 20px;
+              }
+              &__master {
+                width: 34px;
+                height: 20px;
+              }
+              &__saison {
+                width: 30px;
+                height: 20px;
+              }
+              &__jcb {
+                width: 32px;
+                height: 20px;
+              }
+              &__american {
+                width: 21px;
+                height: 20px;
+              }
+              &__diners {
+                width: 32px;
+                height: 20px;
+              }
+              &__discover {
+                width: 32px;
+                height: 20px;
+              }
+            }
+            .signup-form-expire {
+              &__wrap {
+                margin-top: 8px;
+                select {
+                  height: 48px;
+                  width: 35%;
+                  display: inline-block;
+                  padding: 0 16px;
+                  border-radius:4px;
+                  border: 1px solid $gray;
+                  font-size: 16px;
+                  cursor: pointer;
+                }
+              }
+            }
+            p {
+              margin-top: 8px;
+              font-size: 14px;
+            }
+            .info {
+              color: $lightBlue;
+              text-align: right;
+            }
+
+          }
+
+          .text-right {
+            text-align: right;
+            margin-top: 40px;
+            color: $lightBlue;
+          }
+          .icon-angle-right {
+            text-align: right;
+            margin-top: 40px;
+            color: $lightBlue;
+          }
+          &__sub-head {
+            font-size: 16px;
+          }
+          &__setting-add-card {
+            padding: 24px;
+            border-bottom: 1px solid $mainBackgroundGray;
+          }
+          &__setting-not-regist {
+            text-align: right;
+            margin-top: 40px;
+            color: $lightBlue;
           }
         }
       }
