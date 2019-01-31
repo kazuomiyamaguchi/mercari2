@@ -8,9 +8,8 @@ class UsersController < ApplicationController
   def prof
   end
 
-  def edit
+  def identification
   end
-
 
   def mypage
   end
