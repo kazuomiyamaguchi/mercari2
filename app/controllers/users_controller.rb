@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only:[:prof, :identification, :mypage]
+  before_action :set_user, only:[:mypage, :prof, :identification]
 
   def new
   end
@@ -8,19 +8,19 @@ class UsersController < ApplicationController
   def show
   end
 
-  def prof
-  end
-
-  def identification
-  end
-
   def mypage
+  end
+
+  def prof
   end
 
   def payment
   end
 
   def credit
+  end
+
+  def identification
   end
 
   def logout
