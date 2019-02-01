@@ -1,6 +1,9 @@
 = render "items/header"
 
-= render "share/bread-crumps"
+.bread-crumps
+  .item-scope
+    - breadcrumb :mypage
+    = breadcrumbs separator: " &rsaquo; "
 
 .user-page__body
   .user-page__body-content

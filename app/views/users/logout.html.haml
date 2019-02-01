@@ -8,4 +8,7 @@
       .user-logout__link
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-logout__link-tag"
 
-= render "items/footer"
+.bread-crumps
+  .item-scope
+    - breadcrumb :logout
+    = breadcrumbs separator: " &rsaquo; "
