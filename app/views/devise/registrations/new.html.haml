@@ -68,8 +68,8 @@
           .single-main__container__inner
             .single-main__container__inner__body
               .single-main__container__inner__body__field
-                = f.label :携帯電話の番号
-                = f.telephone_field :phone_number, autofocus: true, placeholder: "携帯電話の番号を入力", class: "input-default"
+                -# = f.label :携帯電話の番号
+                -# = f.text_field :phone_number, autofocus: true, placeholder: "携帯電話の番号を入力", class: "input-default"
               %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
 
               %button{ type: "button", class: "btn-default btn-red btn-sms" }

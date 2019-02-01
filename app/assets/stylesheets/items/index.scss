@@ -3,12 +3,19 @@
   background-color: $mainBackgroundGray;
   padding-bottom: 40px;
   &__top-banner{
-    margin: 0 auto;
+    height: 100%;
     width: 100vw;
-    &-picture{
-      background-size: contain;
-      max-width: 100%;
-      margin: 0 auto;
+    &-picture {
+      width: 100vw;
+      a {
+        display: block;
+        width: 100%;
+        img {
+          display: block;
+          min-height: 390px;
+          width: 100%;
+        }
+      }
     }
   }
   &-pickup{
@@ -98,6 +105,27 @@
         text-align: right;
         font-size: 14px;
       }
+    }
+  }
+  .footer-sell-btn {
+    position: fixed;
+    width: 160px;
+    height: 160px;
+    font-size: 22px;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+    border-radius: 50%;
+    background-color: #ea352d;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    p {
+      margin-top: 32px;
+    }
+    i {
+      margin-top: 8px;
+      font-size: 54px;
     }
   }
 }

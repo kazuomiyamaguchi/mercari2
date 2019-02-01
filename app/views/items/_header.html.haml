@@ -5,11 +5,37 @@
       = fa_icon 'search', class: 'header-top__search-icon'
 
   .header-bottom
+    / ここからメニュー
     .header-bottom--left
-      = link_to "/items" ,class: "header-bottom--left__nav-category" do
-        カテゴリーから探す
-      = link_to "/items" ,class: "header-bottom--left__nav-brand" do
-        ブランドから探す
+      %ul.pc-header-nav
+        %li
+          %h2
+            = link_to "カテゴリーから探す", "/items",class: "pc-header-nav-root"
+          %ul.pc-header-nav__parent-wrap
+            %li.pc-header-nav__parent
+              %h3
+                = link_to "レディース", "/items" ,class: "header-bottom--left__nav-link-item"
+              %ul.pc-header-nav__child-wrap
+                %li.pc-header-nav__child
+                  %h4
+                    = link_to "トップスアウター","/items" ,class: "header-bottom--left__nav-link-item"
+                  %ul.pc-header-nav__grand-child-wrap
+                    %li.pc-header-nav__grand-child
+                      = link_to "トップスカットソー", "/items" ,class: "header-bottom--left__nav-link-item"
+                    %li.pc-header-nav__grand-child
+                      = link_to "ブラウス", "/items" ,class: "header-bottom--left__nav-link-item"
+                %li.pc-header-nav__child
+                  %h4
+                    = link_to "ジャケットアウター", "/items" ,class: "header-bottom--left__nav-link-item"
+                  %ul.pc-header-nav__grand-child-wrap
+                    %li.pc-header-nav__grand-child
+                      = link_to "仮テキスト", "/items" ,class: "header-bottom--left__nav-link-item"
+                    %li.pc-header-nav__grand-child
+                      = link_to "仮テキスト", "/items" ,class: "header-bottom--left__nav-link-item"
+        %li
+          %h3.header-bottom--left
+            = link_to "ブランドから探す", "/items" ,class: "header-bottom--left__nav-brand"
+    / ここまでメニュー
     .header-bottom--right
       %ul.bottom--right__nav
         - if user_signed_in?
