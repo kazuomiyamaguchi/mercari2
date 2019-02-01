@@ -21,6 +21,7 @@ end
 
 
 # 以下未実装 実装が完了次第対応
+
 # crumb :notifications do
 #   link "お知らせ", mypage_notification_path
 #   parent :mypage
@@ -38,7 +39,7 @@ end
 
 
 # crumb :search do
-#   link "#{ params[:q][:info_or_name_or_brand_name_or_category_name_cont_all] }", search_path
+#   link "#{ params[:q][] }", search_path
 #   parent :root
 # end
 
