@@ -34,8 +34,102 @@
     padding-top: 8px;
     &--left{
       float: left;
-      height: 32px;
-      &__nav-category{
+      // height: 32px;
+      background-color: $white;
+      .pc-header-nav {
+        display: flex;
+        list-style: none;
+        li {
+          position: relative;
+          display: block;
+        }
+        h2 {
+          font-size: 14px;
+          font-weight: 400px;
+        }
+        a {
+          display: block;
+          color: #333;
+        }
+        &-root {
+          position: relative;
+          height: 38px;
+          line-height: 32px;
+          font-size: 14px;
+          text-decoration: none;
+        }
+        &__parent {
+          display: block;
+          width: 224px;
+          clear: both;
+          h3 {
+            font-size: 14px;
+            font-weight: 400px;
+            a {
+              line-height: 44px;
+              padding: 0 16px;
+            }
+          }
+        }
+        &__parent-wrap {
+          position: absolute;
+          top: 38px;
+          left: -34px;
+          z-index: 1000;
+          background-color: $white;
+          box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+          list-style: none;
+          a {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+          }
+        }
+        &__child {
+          display: block;
+          width: 224px;
+          h3 {
+            font-size: 14px;
+            font-weight: 400px;
+            a {
+              padding: 8px 16px;
+            }
+          }
+        }
+        &__child-wrap {
+          position: absolute;
+          top: 0px;
+          left: 224px;
+          z-index: 1000;
+          background-color: $white;
+          box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+          list-style: none;
+          a {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+          }
+        }
+        &__grand-child {
+          display: block;
+          width: 224px;
+          a {
+            padding: 8px 16px;
+          }
+        }
+        &__grand-child-wrap {
+          position: absolute;
+          top: 0px;
+          left: 224px;
+          z-index: 1000;
+          background-color: $white;
+          box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+          list-style: none;
+        }
+      }
+      &__nav-link-item{
         text-decoration: none;
         color: $black;
         font-size: 14px;
