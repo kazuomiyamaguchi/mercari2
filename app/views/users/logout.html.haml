@@ -1,5 +1,8 @@
 = render "items/header"
-= render "share/bread-crumps"
+.bread-crumps
+  .item-scope
+    - breadcrumb :logout
+    = breadcrumbs separator: " &rsaquo; "
 
 .user-logout__body
   .user-logout-content
@@ -8,7 +11,4 @@
       .user-logout__link
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-logout__link-tag"
 
-.bread-crumps
-  .item-scope
-    - breadcrumb :logout
-    = breadcrumbs separator: " &rsaquo; "
+= render "items/footer"
