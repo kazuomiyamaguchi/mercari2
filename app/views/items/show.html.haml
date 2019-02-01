@@ -10,13 +10,20 @@
     %h1.item-content__title 正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ
     .item-content
       .item-content__photo
-        .item-content__photo-main
-          = image_tag("m90055501397_1.jpg", class: "item-content__photo-main-large" )
+        .item-content__photo-main.owl-carousel
+          .item-content__photo-main-item
+            = image_tag("m17291744325_1.jpg")
+          .item-content__photo-main-item
+            = image_tag("m17291744325_2.jpg")
+          .item-content__photo-main-item
+            = image_tag("m17291744325_3.jpg")
+          .item-content__photo-main-item
+            = image_tag("m17291744325_4.jpg")
         .item-content__photo-subs
-          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
-          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
-          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
-          = image_tag("m90055501397_1.jpg", class: "item-content__photo-subs-small" )
+          = link_to image_tag("m17291744325_1.jpg"), "javascript:void(0)", class: "js-dot1"
+          = link_to image_tag("m17291744325_2.jpg"), "javascript:void(0)", class: "js-dot2"
+          = link_to image_tag("m17291744325_3.jpg"), "javascript:void(0)", class: "js-dot3"
+          = link_to image_tag("m17291744325_4.jpg"), "javascript:void(0)", class: "js-dot4"
       %table.item-content__table
         %tr
           %th 出品者

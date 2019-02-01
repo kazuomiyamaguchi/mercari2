@@ -1,18 +1,11 @@
 class UsersController < ApplicationController
-  def new
-  end
 
-  def show
+  before_action :set_user, only:[:mypage, :prof, :identification]
+
+  def mypage
   end
 
   def prof
-  end
-
-  def edit
-  end
-
-
-  def mypage
   end
 
   def payment
@@ -21,7 +14,15 @@ class UsersController < ApplicationController
   def credit
   end
 
+  def identification
+  end
+
   def logout
+  end
+
+  private
+  def set_user
+    @user = current_user
   end
 
 end
