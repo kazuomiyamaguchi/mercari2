@@ -1,5 +1,8 @@
 = render "items/header"
-= render "share/bread-crumps"
+.bread-crumps
+  .bread-crumps__item
+    - breadcrumb :logout
+    = breadcrumbs separator: " &rsaquo; "
 
 .user-logout__body
   .user-logout-content
