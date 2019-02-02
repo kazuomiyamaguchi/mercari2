@@ -5,4 +5,6 @@ class ItemsController < ApplicationController
   end
   def buy
   end
+  def search
+  end
 end

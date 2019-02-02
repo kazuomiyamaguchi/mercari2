@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root  'items#index'
   get 'items/buy' => "items#buy"
+  get 'items/search' => "items#search"
   resources :items, only: [:index, :show, :new, :create]
   get 'user/identification' => 'users#identification'
   get 'user/prof' => 'users#prof'
