@@ -1,7 +1,25 @@
 = render "items/header"
 = render "share/bread-crumps"
 
-.item-search__body
-  .item-search__body-container
+.search__body
+  .search__body-container
+    = render "search-side-bar"
+    .search__content
+      %h2.search__content-title 検索結果４０件
+      .search__content-item
+        .search__content-item-box
+          = link_to "/items" ,class: "pickup-content__title-link" do
+            = image_tag("m90055501397_1.jpg", alt: "商品", class: "search__content-item-box-photo")
+            .search__content-item-box-body
+              .search__content-item-box-body-name
+                %h3 SLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーター
+              .search__content-item-box-body-price
+                ¥ 1,500
+              .search__content-item-box-body-favorite
+                = fa_icon 'heart-o', class: 'favorite--gray'
+                .search__content-item-box-body-favorite__favorite-num
+                  20
+              .search__content-item-box-body-tax
+                (税込)
 
 = render 'footer'

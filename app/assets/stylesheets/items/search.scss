@@ -1,0 +1,43 @@
+.search__body {
+  background-color: $mainBackgroundGray;
+  &-container {
+    @include clearfix;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 40px 0;
+    .search__content {
+      @include clearfix;
+      width: 700px;
+      float: right;
+      background-color: blue; //仮背景色
+      height: 700px; //仮背景色
+      &-title {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 1.4;
+      }
+      &-item {
+        @include clearfix;
+        width: auto;
+        margin: 0 auto;
+        &-box {
+          margin:0 0 20px 20px;
+          width: 160px;
+          background-color: $white;
+          float: left;
+          position: relative;
+          a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+          }
+          &-photo {
+            width: 160px;
+            height: 160px;
+          }
+        }
+      }
+    }
+  }
+}
