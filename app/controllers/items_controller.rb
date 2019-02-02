@@ -4,7 +4,9 @@ class ItemsController < ApplicationController
   def create
   end
   def sell
-    @item = Prefecture.new
+    @item = Item.new
+    @prefecture = Prefecture.new
+
   end
 
 end
