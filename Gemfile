@@ -72,3 +72,5 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'devise'
 gem 'ancestry'
+gem 'owlcarousel-rails'
+gem "gretel"

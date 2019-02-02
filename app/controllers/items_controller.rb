@@ -6,7 +6,9 @@ class ItemsController < ApplicationController
   def sell
     @item = Item.new
     @prefecture = Prefecture.new
-
   end
-
+  def show
+  end
+  def buy
+  end
 end

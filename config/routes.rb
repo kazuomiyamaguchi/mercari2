@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-
   root  'items#index'
-  resources :items, only: [:index, :new, :create]
   get 'items/sell' => 'items#sell'
-
-  resources :users,only: [:show, :edit]
+  get 'items/buy' => "items#buy"
+  resources :items, only: [:index, :show, :new, :create]
+  get 'user/identification' => 'users#identification'
   get 'user/prof' => 'users#prof'
   get 'user/mypage' => 'users#mypage'
-
-  resources :users, only: [:show, :edit]
-  get 'user/logout' => 'users#logout'
-
+  get 'user/payment' => 'users#payment'
+  get 'user/credit' => 'users#credit'
+  get 'user/logout' => "users#logout"
 end
