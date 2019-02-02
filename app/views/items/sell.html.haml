@@ -41,7 +41,7 @@
               カテゴリー
             .sell-body-detail-contents__category__mark
               必須
-          %select.dummy__input1
+          = f.collection_select :category_id, Category.all, :id, :name, {}, {class: 'wide-categories__input'}
           .sell-body-detail-contents__states
             .sell-body-detail-contents__states__name
               商品の状態
@@ -75,7 +75,8 @@
                 配送元の地域
               .sell-body-delivery-contents__region-notice__mark
                 必須
-            = f.select :name, Prefecture.names.keys, {prompt: '---'}, class: "sell-body-delivery-contents__region-select"
+            = form_for @prefecture, url: {:action => :create} do |fin|
+              = fin.select :name, Prefecture.names.keys, {prompt: '---'}, class: "sell-body-delivery-contents__region-select"
           .sell-body-delivery-contents__days
             .sell-body-delivery-contents__days-notice
               .sell-body-delivery-contents__days-notice__name
@@ -96,7 +97,7 @@
                 価格
               .sell-body-price-main-input__box__mark
                 必須
-              %input.sell-body-price-main-input__box__yen
+              %input{class: "sell-body-price-main-input__box__yen", placeholder: "例)300"}
               .sell-body-price-main-input__box__yen-mark
                 ￥
           .sell-body-price-main-commission
@@ -104,13 +105,13 @@
               .sell-body-price-main-commission__box__name
                 販売手数料(10%)
               .sell-body-price-main-commission__box__ans
-                ￥100
+                ー
           .sell-body-price-main-profit
             .sell-body-price-main-profit__box
               .sell-body-price-main-profit__box__name
                 販売利益
               .sell-body-price-main-profit__box__ans
-                ￥900
+                ー
       .sell-body-exhibit
         %p.sell-body-exhibit__caution
           #{link_to "禁止されている出品", "#",class: "sell-body-exhibit__caution-link"}、#{link_to "行為", "#",class: "sell-body-exhibit__caution-link"}を必ずご確認ください。
