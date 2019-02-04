@@ -74,3 +74,4 @@ gem 'devise'
 gem 'ancestry'
 gem 'owlcarousel-rails'
 gem "gretel"
+gem 'ransack'
