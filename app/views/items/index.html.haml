@@ -18,11 +18,8 @@
       .pickup-content__title
         = link_to 'レディース 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 
@@ -30,11 +27,8 @@
       .pickup-content__title
         = link_to 'メンズ 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 
@@ -42,11 +36,8 @@
       .pickup-content__title
         = link_to 'ベビー・キッズ 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 
@@ -54,11 +45,8 @@
       .pickup-content__title
         = link_to 'コスメ・香水・美容 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 
@@ -68,11 +56,8 @@
       .pickup-content__title
         = link_to 'シャネル 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 
@@ -80,11 +65,8 @@
       .pickup-content__title
         = link_to 'ルイ ヴィトン 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 
@@ -92,11 +74,8 @@
       .pickup-content__title
         = link_to 'シュプリーム 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 
@@ -104,11 +83,8 @@
       .pickup-content__title
         = link_to 'ナイキ 新着アイテム', "/items" ,class: "pickup-content__title-link" ,method: :get
       .pickup-content-items
-        -# 変数使えるようになったらeach文にする
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
-        = render 'itembox'
+        - @items.each do |item|
+          = render 'itembox', {item: item}
 
       = link_to '全ての商品を見る',"/items" ,class: "pick-up-content__view-all" ,method: :get
 

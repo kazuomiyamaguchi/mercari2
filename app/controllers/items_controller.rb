@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.order("RAND()").limit(4)
   end
   def create
   end
