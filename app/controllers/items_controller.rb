@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   def search
     @q = Item.search(search_params)
     @search_data = @q.result(distinct: true)
+    @search_count = @search_data.length
   end
 
   private
