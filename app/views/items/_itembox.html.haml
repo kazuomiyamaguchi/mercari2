@@ -1,0 +1,14 @@
+.pickup-content-items-box
+  = link_to "/items" ,class: "pickup-content__title-link" do
+    = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
+    .pickup-content-items-box-body
+      .pickup-content-items-box-body__name
+        %h3 SLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーター
+      .pickup-content-items-box-body__price
+        ¥ 1,500
+      .pickup-content-items-box-body__favorite
+        = fa_icon 'heart-o', class: 'favorite--gray'
+        .pickup-content-items-box-body__favorite-num
+          20
+      .pickup-content-items-box-body__tax
+        (税込)

@@ -2,23 +2,16 @@
   clear: both;
   border-top: 1px solid #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  .item-scope{
-    height: 57px;
+  &__item {
     width: 1020px;
     margin: auto;
-    &-list{
-      font-size: 14px;
-      padding-top: 16px;
-      padding-bottom: 16px;
-      float: left;
-
-      .item-scope-right{
-      color: #888;
-      font-size:14px;
-      margin-top: 5px;
-      float: right;
-      padding: 0px 8px 0px 8px;
-      }
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: bold;
+    a {
+      color: #333;
+      text-decoration: none;
+      font-weight: normal;
     }
   }
 }
