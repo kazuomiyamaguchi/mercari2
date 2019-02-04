@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190129080532) do
+
+ActiveRecord::Schema.define(version: 20190204051647) do
+
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postcode",      null: false
@@ -47,8 +49,10 @@ ActiveRecord::Schema.define(version: 20190129080532) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "category"
     t.integer  "category_id"
+    t.string   "name"
+    t.integer  "price"
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
   end
 
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -78,4 +82,5 @@ ActiveRecord::Schema.define(version: 20190129080532) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "creditcards", "users"
+  add_foreign_key "items", "categories"
 end
