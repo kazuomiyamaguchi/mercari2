@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20190129080532) do
-  
+
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postcode",      null: false
     t.integer  "prefecture_id", null: false
@@ -72,16 +71,11 @@ ActiveRecord::Schema.define(version: 20190129080532) do
     t.string   "last_name_kana",                      null: false
     t.string   "first_name_kana",                     null: false
     t.string   "phone_number",                        null: false
-    t.integer  "address_id"
-    t.integer  "payment_id"
-    t.index ["address_id"], name: "index_users_on_address_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
-    t.index ["payment_id"], name: "index_users_on_payment_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "addresses", "users"
   add_foreign_key "creditcards", "users"
-  add_foreign_key "users", "addresses"
 end
