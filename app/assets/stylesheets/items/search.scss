@@ -1,0 +1,92 @@
+.search__body {
+  @include clearfix;
+  background-color: $mainBackgroundGray;
+  &-container {
+    @include clearfix;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 40px 0;
+    .search__content {
+      @include clearfix;
+      width: 720px;
+      float: right;
+      &-title {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 1.4;
+      }
+      &-item {
+        @include clearfix;
+        width: auto;
+        margin: 0 auto;
+        &-box {
+          @include clearfix;
+          margin:0 20px 20px 0;
+          width: 160px;
+          background-color: $white;
+          float: left;
+          position: relative;
+          a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+          }
+          &-photo {
+            width: 160px;
+            height: 160px;
+          }
+          &-body{
+            padding: 16px;
+            height: 110px;
+            &-name {
+              overflow: hidden;
+              position: relative;
+              font-weight: 400;
+              height: 3em;
+              line-height: 1.5;
+              word-break: break-word;
+              white-space: normal;
+              font-size: 16px;
+              color: #333;
+            }
+            &__num {
+              @include clearfix;
+              margin-top: 8px;
+              &-price {
+                font-size: 20px;
+                float: left;
+                font-weight: 400px;
+                color: #333;
+              }
+              &-favorite {
+                float: right;
+                font-size: 16px;
+                font-weight: 400;
+                color: #333;
+                  .favorite--icon {
+                  margin :0 4px 0 0;
+                  vertical-align: middle;
+                  display: inline-block;
+                  font-style: normal;
+                  font-variant: normal;
+                  text-transform: none;
+                  line-height: 1;
+                }
+                &-num {
+                  display: inline-block;
+                  margin: 1px 0 0;
+                  vertical-align: middle;
+                }
+              }
+              &-tax {
+                font-size: 10px;
+                clear: both;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
