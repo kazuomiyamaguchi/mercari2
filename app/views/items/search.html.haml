@@ -1,5 +1,8 @@
 = render "items/header"
-= render "share/bread-crumps"
+.bread-crumps
+  .bread-crumps__item
+    - breadcrumb :search
+    = breadcrumbs separator: " &rsaquo; "
 
 .search__body
   .search__body-container
