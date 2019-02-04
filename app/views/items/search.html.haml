@@ -1,0 +1,13 @@
+= render "items/header"
+= render "share/bread-crumps"
+
+.search__body
+  .search__body-container
+    = render "search-side-bar"
+    .search__content
+      %h2.search__content-title 検索結果４０件
+      .search__content-item
+        - 20.times do
+          = render 'search-item-box'
+
+= render 'footer'

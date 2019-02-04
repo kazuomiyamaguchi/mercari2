@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root  'items#index'
   get 'items/sell' => 'items#sell'
   get 'items/buy' => "items#buy"
+  get 'items/search' => "items#search"
   resources :items, only: [:index, :show, :new, :create]
   get 'user/identification' => 'users#identification'
   get 'user/prof' => 'users#prof'
