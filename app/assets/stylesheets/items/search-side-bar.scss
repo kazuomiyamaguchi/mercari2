@@ -1,7 +1,18 @@
 .search-side-bar {
   width: 240px;
   float: left;
-  background-color: yellow; //仮背景
-  height: 700px; //仮背景
   margin: 0 40px 0 0;
+  &__detail {
+    position: relative;
+  }
+  &_top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin: 0 auto;
+    opacity: 1;
+    position: static;
+    width: auto;
+  }
 }
