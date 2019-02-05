@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'faker'
 end
 
 group :development do
@@ -74,3 +75,4 @@ gem 'devise'
 gem 'ancestry'
 gem 'owlcarousel-rails'
 gem "gretel"
+gem 'ransack'

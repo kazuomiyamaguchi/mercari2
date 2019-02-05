@@ -1,11 +1,11 @@
 .header
   .header-top
-    = image_tag("logo.svg",alt: "logo",class: "header-top__title")
-    %input{class: "header-top__search",placeholder: 'キーワードから探す' }
-      = fa_icon 'search', class: 'header-top__search-icon'
-
+    = link_to image_tag('logo.svg', alt:"mercari", class: 'header-top__title'), root_path
+    = search_form_for(@q, url:items_search_path) do |f|
+      = f.search_field :name_cont, placeholder: "キーワードから探す", class: "header-top__search"
+      %button.icon-search{type:"submit"}
+        = fa_icon 'search'
   .header-bottom
-    / ここからメニュー
     .header-bottom--left
       %ul.pc-header-nav
         %li
@@ -35,7 +35,6 @@
         %li
           %h3.header-bottom--left
             = link_to "ブランドから探す", "/items" ,class: "header-bottom--left__nav-brand"
-    / ここまでメニュー
     .header-bottom--right
       %ul.bottom--right__nav
         - if user_signed_in?
