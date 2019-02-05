@@ -15,8 +15,9 @@ class ItemsController < ApplicationController
   def buy
   end
   def search
-    @q = Item.search(search_params)
-    @search_data = @q.result(distinct: true)
+    @q            = Item.search(search_params)
+    @search_data  = @q.result(distinct: true)
+    @parents      = Item.where("category_id")
     @search_count = @search_data.length
   end
 
