@@ -1,6 +1,8 @@
 .all-container
   = render 'devise/registrations/header'
   = form_for @item, url: {:action => :create} do |f|
+    = fields_for(@image) do |image|
+      = image.file_field :image
     .sell-body
       .sell-body__title
         商品情報の入力
@@ -13,11 +15,13 @@
           .sell-body-picture-header__text
             最大4枚までアップできます
         .sell-body-picture-body
-          .sell-body-picture-body-upload-box
-            %input.sell-body-picture-body-upload-box__picture
-            %pre.sell-body-picture-body-upload-box__text
-              ドラッグアンドドロップ
-              またはクリックしてファイルをアップロード
+          -# = fields_for(@image) do |image|
+          -#   = image.file_field :image
+              #file_drop_area.sell-body-picture-body-upload-box
+                %input.sell-body-picture-body-upload-box__picture
+                %pre.sell-body-picture-body-upload-box__text
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
       .sell-body-information
         .sell-body-information-content
           .sell-body-information-content__name
@@ -75,8 +79,7 @@
                 配送元の地域
               .sell-body-delivery-contents__region-notice__mark
                 必須
-            = form_for @prefecture, url: {:action => :create} do |fin|
-              = fin.select :name, Prefecture.names.keys, {prompt: '---'}, class: "sell-body-delivery-contents__region-select"
+            = f.collection_select :prefecture, Prefecture.all, :id, :name, {}, {class: "sell-body-delivery-contents__region-select"}
           .sell-body-delivery-contents__days
             .sell-body-delivery-contents__days-notice
               .sell-body-delivery-contents__days-notice__name
@@ -121,12 +124,9 @@
           は犯罪であり処罰される可能性があります。
         %p.sell-body-exhibit__caution
           また、出品をもちまして#{link_to "加盟店規約", "#",class: "sell-body-exhibit__caution-link"}に同意したことになります。
-        .sell-body-exhibit__send
-          出品する
+        = f.submit '出品する', class: 'sell-body-exhibit__send'
         = link_to "#" ,class: "sell-body-exhibit__exit" do
           .sell-body-exhibit__exit-link
             もどる
-
-
 
   = render 'devise/registrations/footer'
