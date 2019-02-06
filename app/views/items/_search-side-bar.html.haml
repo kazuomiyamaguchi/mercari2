@@ -5,21 +5,21 @@
     .search-side-bar__main
       %h3.search-side-bar__main-title 詳細検索
       .search-side-bar__main-keyword
-        = f.label :name_cont, "キーワードを追加する"
-        = f.search_field :name_cont, class: "search-side-bar__main-keyword-form"
+        = f.label :name_or_brand_name_or_category_name_cont_all, "キーワードを追加する"
+        = f.search_field :name_or_brand_name_or_category_name_cont_all, class: "search-side-bar__main-keyword-form"
       .search-side-bar__main-category
         = f.label :category_id_in, "カテゴリーを選択する"
         .search-side-bar__main-category-wrap
           = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, { class: "search-side-bar__main-category-wrap-select" }
-        .search-side-bar__main-category-hide
-          = f.select :category_id_eq, {}, {prompt: "---"}, { class: "search-side-bar__main-category-wrap-select" }
+        / .search-side-bar__main-category-hide
+        /   = f.select :category_id_eq, {}, {prompt: "---"}, { class: "search-side-bar__main-category-wrap-select" }
       .search-side-bar__main-brand
         = f.label :brand_name_cont_all, "ブランド名から探す"
         %input{class: "search-side-bar__main-brand-form", value: "ブランド"}
-      .search-side-bar__main-size
+      .search-side-bar__main-itemsize
         = f.label "サイズを指定する"
-        .search-side-bar__main-size-wrap
-          / = f.collection_select :size_size_group_id, @size_groups, :id, :group, {prompt: "---"}, { class: "fsearch-side-bar__main-size-form" }
+        .search-side-bar__main-itemsize-wrap
+          = f.collection_select :size_id_in, @sizes, :id, :size, {prompt: "---"}, { class: "search-side-bar__main-itemsize-form" }
       .search-side-bar__main-price
         = f.label :price, "価格"
         .search-side-bar__main-price-wrap
@@ -28,32 +28,32 @@
         %span 〜
         = f.search_field :price_lteq, class: "search-side-bar__main-price-input"
       .search-side-bar__main-condition
-        = f.label :conditon_eq_any, "商品の状態"
+        = f.label :condition_id_eq, "商品の状態"
         %br
         .search-side-bar__main-condition__checkbox
-          / = f.check_box :status_eq_any, {multiple: true}, "新品未使用", nil
-          / 新品未使用
+          = f.check_box :condition_id_eq, {multiple: true}, "新品未使用", nil
+          新品未使用
         .search-side-bar__main-condition__checkbox
-          / = f.check_box :status_eq_any, {multiple: true}, "未使用に近い", nil
-          / 未使用に近い
+          = f.check_box :condition_id_eq, {multiple: true}, "未使用に近い", nil
+          未使用に近い
         .search-side-bar__main-condition__checkbox
-          / = f.check_box :status_eq_any, {multiple: true}, "目立った傷や汚れなし", nil
-          / 目立った傷や汚れなし
+          = f.check_box :condition_id_eq, {multiple: true}, "目立った傷や汚れなし", nil
+          目立った傷や汚れなし
         .search-side-bar__main-condition__checkbox
-          / = f.check_box :status_eq_any, {multiple: true}, "やや傷や汚れやあり", nil
-          / やや傷や汚れやあり
+          = f.check_box :condition_id_eq, {multiple: true}, "やや傷や汚れやあり", nil
+          やや傷や汚れやあり
         .search-side-bar__main-condition__checkbox
-          / = f.check_box :status_eq_any, {multiple: true}, "全体的に状態が悪い", nil
-          / 全体的に状態が悪い
+          = f.check_box :condition_id_eq, {multiple: true}, "全体的に状態が悪い", nil
+          全体的に状態が悪い
       .search-side-bar__main-delivery
-        = f.label :delivery_fee_owner_eq_any, "配送料の負担"
+        = f.label :delivery_fee_id_eq, "配送料の負担"
         %br
         .search-side-bar__main-delivery__checkbox
-          / = f.check_box :delivery_fee_owner_eq_any, {multiple: true}, "着払い(購入者負担)", nil
-          / 着払い(購入者負担)
+          = f.check_box :delivery_fee_id_eq, {multiple: true}, "着払い(購入者負担)", nil
+          着払い(購入者負担)
         .search-side-bar__main-delivery__checkbox
-          / = f.check_box :delivery_fee_owner_eq_any, {multiple: true}, "送料込み(出品者負担)", nil
-          / 送料込み(出品者負担)
+          = f.check_box :delivery_fee_id_eq, {multiple: true}, "送料込み(出品者負担)", nil
+          送料込み(出品者負担)
       .search-side-bar__main-buyer
         / = f.label :buyer_id, "販売状況"
         %br

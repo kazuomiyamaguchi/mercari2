@@ -93,14 +93,16 @@
         font-size: 16px;
       }
     }
-    &-size {
+    &-itemsize {
       margin-top: 24px;
       font-size: 14px;
       vertical-align: middle;
       font-weight: 400;
       &-wrap {
+        margin-top: 8px;
       }
       &-form {
+        width: 100%;
         margin-top: 8px;
         height: 48px;
         padding:0 10px 0;
@@ -156,6 +158,16 @@
       vertical-align: middle;
       font-weight: 400;
       &__checkbox {
+        position: relative;
+        display: inline-block;
+        width: 48%;
+        vertical-align: middle;
+        word-break: break-word;
+        font-size: 12px;
+        input {
+          height: 16px;
+          width: 16px;
+        }
       }
     }
     &-delivery {
@@ -164,6 +176,11 @@
       vertical-align: middle;
       font-weight: 400;
       &__checkbox {
+        display: inline-block;
+        width: 48%;
+        vertical-align: middle;
+        word-break: break-word;
+        font-size: 12px;
       }
     }
     &-buyer {

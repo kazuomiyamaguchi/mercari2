@@ -1,5 +1,5 @@
-# faker
-30.times do
+
+20.times do |n|
      Item.create(
         name: Faker::Food.fruits,
         price: Faker::Commerce.price,

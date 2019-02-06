@@ -15,14 +15,25 @@ class ItemsController < ApplicationController
   def buy
   end
   def search
-    @q            = Item.search(search_params)
+    @q            = Item.ransack(search_params)
     @search_data  = @q.result(distinct: true)
-    @parents      = Item.where("category_id")
     @search_count = @search_data.length
+    @sizes        = Size.all
+    @parents        = Category.roots
   end
 
   private
   def search_params
-    params.require(:q).permit(:name_cont)
+    params.require(:q).permit(
+      :s,
+      :name_or_brand_name_or_category_name_cont_all,
+      :category_id_in,
+      :brand_name_cont_all,
+      :size_id_in,
+      :price_gteq,
+      :price_lteq,
+      :condition_id_eq,
+      :delivery_fee_id_eq,
+      ) unless params[:q].blank?
   end
 end
