@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.order("RAND()").limit(4)
-    @q = Item.ransack(params[:q])
-    @search_data = @q.result(distinct: true)
+    @search_data   = Item.ransack(params[:q])
+    @search_result = @search_data.result(distinct: true)
   end
   def create
   end
@@ -15,10 +15,10 @@ class ItemsController < ApplicationController
   def buy
   end
   def search
-    @q            = Item.ransack(search_params)
-    @search_data  = @q.result(distinct: true)
-    @search_count = @search_data.length
-    @sizes        = Size.all
+    @search_data    = Item.ransack(search_params)
+    @search_result  = @search_data.result(distinct: true)
+    @search_count   = @search_result.length
+    @sizes          = Size.all
     @parents        = Category.roots
   end
 

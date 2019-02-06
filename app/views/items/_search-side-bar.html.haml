@@ -1,5 +1,5 @@
 .search-side-bar
-  = search_form_for(@q, url:items_search_path, html:{ class: "product_search__detail" }) do |f|
+  = search_form_for(@search_data, url:items_search_path, html:{ class: "product_search__detail" }) do |f|
     .search-side-bar__top
       = f.select :s, [["価格の安い順", "price asc"], ["価格の高い順", "price desc"], ["出品の古い順", "created_at asc"], ["出品の新しい順", "created_at desc"]], {prompt: "並び替え"}, { class: "search-side-bar__top-select" }
     .search-side-bar__main
