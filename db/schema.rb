@@ -47,14 +47,6 @@ ActiveRecord::Schema.define(version: 20190205083435) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "condtions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "condtion",   null: false
-    t.integer  "item_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_condtions_on_item_id", using: :btree
-  end
-
   create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "number",           null: false
     t.integer  "expiration_month", null: false
@@ -144,7 +136,6 @@ ActiveRecord::Schema.define(version: 20190205083435) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
-  add_foreign_key "condtions", "items"
   add_foreign_key "creditcards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
