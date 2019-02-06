@@ -18,6 +18,6 @@ crumb :logout do
 end
 
 crumb :search do
-  link "#{ params[:q][:name_cont] }", items_search_path
+  link "#{ params[:q][:name_or_brand_name_or_category_name_cont_all] }", items_search_path
   parent :root
 end
