@@ -6,17 +6,21 @@
       .buy-content-inner
         %h3.buy-content-inner__photo
           = image_tag( "m90055501397_1.jpg", class: "buy-content-inner__photo-img" )
-        %p.buy-content-inner__name【値下げ】レイカズンニットワンピースGU
-        / ここからフォームタグ
+        %p.buy-content-inner__name
+          = @item.name
         .buy-content-inner__price
-          %p.buy-content-inner__price--bold ¥ 1,200
+          %p.buy-content-inner__price--bold
+            = "¥#{@item.price}"
           %p.buy-content-inner__price--normal 送料込み
         %p.buy-content-inner__point ポイントはありません
         .buy-content-inner__pay-price
           %p.buy-content-inner__pay-price-leftbox 支払い金額
-          %p.buy-content-inner__pay-price-rightbox ¥ 1,200
+          %p.buy-content-inner__pay-price-rightbox
+            = "¥#{@item.price}"
         %p.buy-content-inner__alert 配送先と支払い方法の入力を完了してください。
-        %input{class: "buy-content-inner__send-btn",type: "submit" , value: "購入する" }
+        = form_tag(action: :pay, method: :post) do
+          %script.payjp-button{ src: "https://checkout.pay.jp", type: "text/javascript", "data-text": "購入する", "data-submit-text": "購入する", "data-key": ENV["PAYJP_PUBLIC_KEY"]}
+
     .buy-user-info
       .buy-user-info-inner
         .buy-user-info-inner__address
@@ -32,6 +36,6 @@
         .buy-user-info-inner__pay-fix
           %h3 支払い方法
           .buy-user-info-inner__pay-fix-method
-            クレカの情報〜〜〜〜
-          = link_to '変更する', "/items" ,class: "buy-user-info-inner__pay-fix-change" ,method: :get
+
+          = link_to '変更する', "#" ,class: "buy-user-info-inner__pay-fix-change" ,method: :get
   = render 'devise/registrations/footer'

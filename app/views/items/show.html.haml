@@ -7,7 +7,8 @@
 
 .item-page__body
   .item-page__body-container
-    %h1.item-content__title 正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ
+    %h1.item-content__title
+      = @item.name
     .item-content
       .item-content__photo
         #sub-slider.item-content__photo-main.owl-carousel
@@ -53,10 +54,11 @@
           %th 発送日の目安
           %td 2~3日で発送
     .item-price-box
-      .item-price-box__price ¥ 3,380
+      .item-price-box__price
+        = "¥#{@item.price}"
       .item-price-box__tax (税込)
       .item-price-box__shipping 送料込み
-    = link_to '購入画面に進む', "/items" ,class: "item-buy-btn" ,method: :get
+    = link_to '購入画面に進む', buy_item_path ,class: "item-buy-btn" ,method: :get
     .item-description
       %p.item-description__inner
         ■商品ご覧頂き、誠にありがとうございます。
