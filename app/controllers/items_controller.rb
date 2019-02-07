@@ -17,7 +17,12 @@ class ItemsController < ApplicationController
   end
 
   def show
+
+    @search_data    = Item.ransack(search_params)
+    @search_result  = @search_data.result(distinct: true)
+
     @items = Item.order("RAND()").limit(6)
+
   end
 
   def buy
