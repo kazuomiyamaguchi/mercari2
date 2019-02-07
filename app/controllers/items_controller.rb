@@ -10,10 +10,15 @@ class ItemsController < ApplicationController
     @item = Item.new
     @prefecture = Prefecture.new
   end
+
   def show
+    @search_data    = Item.ransack(search_params)
+    @search_result  = @search_data.result(distinct: true)
   end
+
   def buy
   end
+
   def search
     @search_data    = Item.ransack(search_params)
     @search_result  = @search_data.result(distinct: true)
