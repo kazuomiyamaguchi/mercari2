@@ -1,9 +1,6 @@
-/ ここからヘッダーですープルリクエスト前に削除
 = render "items/header"
 
 = render "share/bread-crumps"
-
-/ ここからメインエリアですプルリクエスト前に削除
 
 .item-page__body
   .item-page__body-container
@@ -110,122 +107,13 @@
         .pickup-content__title
           = link_to 'その他の出品', "/items" ,class: "pickup-content__title-link" ,method: :get
         .pickup-content-items
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
+          - @items.each do |item|
+            = render 'itembox', {item: item}
       .pickup-content
         .pickup-content__title
           = link_to 'その他商品', "/items" ,class: "pickup-content__title-link" ,method: :get
         .pickup-content-items
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーターSLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
-          .pickup-content-items-box
-            = link_to "/items" ,class: "pickup-content__title-link" do
-              = image_tag("m90055501397_1.jpg", alt: "商品", class: "pickup-content-items-box__img")
-              .pickup-content-items-box-body
-                .pickup-content-items-box-body__name
-                  %h3 SLYセーター
-                .pickup-content-items-box-body__price
-                  ¥ 1,500
-                .pickup-content-items-box-body__favorite
-                  = fa_icon 'heart-o', class: 'favorite--gray'
-                  .pickup-content-items-box-body__favorite-num
-                    20
-                .pickup-content-items-box-body__tax
-                  (税込)
+          - @items.each do |item|
+            = render 'itembox', {item: item}
 
-/ ここからフッターですープルリクエスト前に削除
 = render "items/footer"

@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
     @prefecture = Prefecture.new
   end
   def show
+    @items = Item.order("RAND()").limit(6)
   end
   def buy
   end
