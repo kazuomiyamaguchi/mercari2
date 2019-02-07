@@ -1,11 +1,17 @@
-# faker
-20.times do
+
+20.times do |n|
      Item.create(
-        name: Faker::Commerce.product_name,
+        name: Faker::Food.fruits,
         price: Faker::Commerce.price,
-        category_id: Faker::Number.between(1, 10)
+        category_id: Faker::Number.between(1, 10),
+        size_id: Faker::Number.between(1, 10),
+        condition_id: Faker::Number.between(1, 10),
+        delivery_fee_id: Faker::Number.between(1, 10),
+        delivery_day_id: Faker::Number.between(1, 10),
+        ships_forms_id: Faker::Number.between(1, 10),
       )
 end
+
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -14,6 +20,18 @@ end
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Size.create([{size: "XXS以下"}, {size: "XS(SS)"}, {size: "S"}, {size: "M"}, {size: "L"}, {size: "XL(LL)"}, {size: "2XL(3L)"}, {size: "3XL(4L)"}, {size: "4XL(5L)以上"}, {size: "FREE SIZE"}])
+
+Condition.create([{condition: "新品"}, {condition: "未使用品"}, {condition: "未使用に近い"}, {condition: "目立った傷や汚れなし"}, {condition: "やや傷や汚れあり"}, {condition: "傷や汚れあり"}, {condition: "全体的に状態が悪い"}])
+
+DeliveryFee.create([{fee: "送料込み(出品者負担)"}, {fee: "着払い(購入者負担)"}])
+
+DeliveryDay.create([{day: "1~2日で発送"}, {day: "2~3日で発送"}, {day: "4~7日で発送"}])
+
+北海道, 青森県, 岩手県 ,宮城県 ,秋田県 ,山形県 ,福島県 ,茨城県 ,栃木県 ,群馬県 ,埼玉県 ,千葉県 ,東京都 ,神奈川県 ,新潟県 ,富山県 ,石川県 ,福井県 ,山梨県 ,長野県 ,岐阜県 ,静岡県 ,愛知県 ,三重県 ,滋賀県 ,京都府 ,大阪府 ,兵庫県 ,奈良県 ,和歌山県 ,鳥取県 ,島根県 ,岡山県 ,広島県 ,山口県 ,徳島県 ,香川県 ,愛媛県 ,高知県 ,福岡県 ,佐賀県 ,長崎県 ,熊本県 ,大分県 ,宮崎県 ,鹿児島県, 沖縄県 = Prefecture.create([{name: "北海道"}, {name: "青森県"}, {name: "岩手県"}, {name: "宮城県"}, {name: "秋田県"}, {name: "山形県"}, {name: "福島県"}, {name: "茨城県"}, {name: "栃木県"}, {name: "群馬県"}, {name: "埼玉県"}, {name: "千葉県"}, {name: "東京都"}, {name: "神奈川県"}, {name: "新潟県"}, {name: "富山県"}, {name: "石川県"}, {name: "福井県"}, {name: "山梨県"}, {name: "長野県"}, {name: "岐阜県"}, {name: "静岡県"}, {name: "愛知県"}, {name: "三重県"}, {name: "滋賀県"}, {name: "京都府"}, {name: "大阪府"}, {name: "兵庫県"}, {name: "奈良県"}, {name: "和歌山県"}, {name: "鳥取県"}, {name: "島根県"}, {name: "岡山県"}, {name: "広島県"}, {name: "山口県"}, {name: "徳島県"}, {name: "香川県"}, {name: "愛媛県"}, {name: "高知県"}, {name: "福岡県"}, {name: "佐賀県"}, {name: "長崎県"}, {name: "熊本県"}, {name: "大分県"}, {name: "宮崎県"}, {name: "鹿児島県"}, {name: "沖縄県"}])
+
+北海道, 青森県, 岩手県 ,宮城県 ,秋田県 ,山形県 ,福島県 ,茨城県 ,栃木県 ,群馬県 ,埼玉県 ,千葉県 ,東京都 ,神奈川県 ,新潟県 ,富山県 ,石川県 ,福井県 ,山梨県 ,長野県 ,岐阜県 ,静岡県 ,愛知県 ,三重県 ,滋賀県 ,京都府 ,大阪府 ,兵庫県 ,奈良県 ,和歌山県 ,鳥取県 ,島根県 ,岡山県 ,広島県 ,山口県 ,徳島県 ,香川県 ,愛媛県 ,高知県 ,福岡県 ,佐賀県 ,長崎県 ,熊本県 ,大分県 ,宮崎県 ,鹿児島県, 沖縄県 = ShipsForm.create([{area: "北海道"}, {area: "青森県"}, {area: "岩手県"}, {area: "宮城県"}, {area: "秋田県"}, {area: "山形県"}, {area: "福島県"}, {area: "茨城県"}, {area: "栃木県"}, {area: "群馬県"}, {area: "埼玉県"}, {area: "千葉県"}, {area: "東京都"}, {area: "神奈川県"}, {area: "新潟県"}, {area: "富山県"}, {area: "石川県"}, {area: "福井県"}, {area: "山梨県"}, {area: "長野県"}, {area: "岐阜県"}, {area: "静岡県"}, {area: "愛知県"}, {area: "三重県"}, {area: "滋賀県"}, {area: "京都府"}, {area: "大阪府"}, {area: "兵庫県"}, {area: "奈良県"}, {area: "和歌山県"}, {area: "鳥取県"}, {area: "島根県"}, {area: "岡山県"}, {area: "広島県"}, {area: "山口県"}, {area: "徳島県"}, {area: "香川県"}, {area: "愛媛県"}, {area: "高知県"}, {area: "福岡県"}, {area: "佐賀県"}, {area: "長崎県"}, {area: "熊本県"}, {area: "大分県"}, {area: "宮崎県"}, {area: "鹿児島県"}, {area: "沖縄県"}])
+
 レディース, メンズ, ベビー・キッズ, インテリア・住まい・小物, 本・音楽・ゲーム, おもちゃ・ホビー・グッズ, おもちゃ・ホビー・グッズ, コスメ・香水・美容, 家電・スマホ・カメラ, スポーツ・レジャー, ハンドメイド, チケット, 自動車・オートバイ, その他  = Category.create([{name: "レディース"}, {name: "メンズ"}, {name: "ベビー・キッズ"}, {name: "インテリア・住まい・小物"}, {name: "本・音楽・ゲーム"}, {name: "おもちゃ・ホビー・グッズ"}, {name: "コスメ・香水・美容"}, {name: "家電・スマホ・カメラ"}, {name: "スポーツ・レジャー"}, {name: "ハンドメイド"}, {name: "チケット"}, {name: "自動車・オートバイ"}, {name: "その他"}])
 
 
