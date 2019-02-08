@@ -1,25 +1,43 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:show, :buy, :pay]
+
   def index
     @items = Item.order("RAND()").limit(4)
     @search_data   = Item.ransack(params[:q])
     @search_result = @search_data.result(distinct: true)
   end
+
   def create
   end
+
   def sell
     @item = Item.new
     @prefecture = Prefecture.new
   end
+
   def show
+    @items = Item.order("RAND()").limit(6)
   end
+
   def buy
   end
+
   def search
     @search_data    = Item.ransack(search_params)
     @search_result  = @search_data.result(distinct: true)
     @search_count   = @search_result.length
     @sizes          = Size.all
     @parents        = Category.roots
+  end
+
+  def pay
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      card: params['payjp-token'],
+      currency: 'jpy',
+    )
   end
 
   private
@@ -36,4 +54,9 @@ class ItemsController < ApplicationController
       :delivery_fee_id_eq,
       ) unless params[:q].blank?
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
